@@ -1,10 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'blog/base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<h2 class="section-title">最新文章</h2>
+
+<!-- 搜索框 -->
+<div class="search-bar">
+  <form method="get" action="{% url 'blog:index' %}">
+    <input
+      type="text"
+      name="q"
+      value="{{ keyword }}"
+      placeholder="搜索文章标题或摘要..."
+      class="search-input"
+      />
+    {% if keyword %}
+    <a href="{% url 'blog:index' %}" class="clear-btn">✕</a>
+    {% endif %}
+  </form>
+</div>
+
+<!-- 分类筛选导航 -->
+<div class="category-bar">
+  <a href="{% url 'blog:index' %}"
+    class="{% if not category_slug %}active{% endif %}">全部</a>
+
+  {% for cat in categories %}
+  <a href="{% url 'blog:index' %}?category={{ cat.slug }}{% if keyword %}&q={{ keyword }}{% endif %}"
+    class="{% if category_slug == cat.slug %}active{% endif %}">
+    {{ cat.name }}
+  </a>
+  {% endfor %}
+</div>
+
+<!-- 筛选结果统计 -->
+<p class="result-info">
+  共 {{ posts.count }} 篇
+  {% if keyword %}，搜索「{{ keyword }}」{% endif %}
+</p>
+
+{% if posts %}
+<div class="article-grid">
+  {% for post in posts %}
+  <div class="article-card">
+    <a href="{% url 'blog:post_detail' post.pk %}" class="card-link">
+      <div class="card-content">
+        <span class="card-category">{{ post.category.name }}</span>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.summary|truncatechars:80 }}</p>
+        <div class="card-footer">
+          <span class="card-date">{{ post.created_at|date:"Y-m-d" }}</span>
+          {% if user.is_authenticated %}
+          <form method="post" action="{% url 'blog:toggle_favorite' post.pk %}" class="fav-form">
+            {% csrf_token %}
+            <button type="submit" class="fav-btn-small">
+              {% if user in post.favorites.all %}♥{% else %}♡{% endif %}
+            </button>
+          </form>
+          {% endif %}
+        </div>
+      </div>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<p class="empty-tip">没有找到匹配的文章</p>
+{% endif %}
+{% endblock %}

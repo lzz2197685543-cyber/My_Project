@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<!-- 文件路径：blog/templates/blog/register.html -->
+{% extends 'blog/base.html' %}
+
+{% block title %}注册 - LZZ 博客{% endblock %}
+
+{% block content %}
+<div class="auth-form">
+    <h2>注册</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-submit">注册</button>
+    </form>
+    <p class="form-footer">
+        已有账号？<a href="{% url 'blog:login' %}">立即登录</a>
+    </p>
+</div>
+{% endblock %}

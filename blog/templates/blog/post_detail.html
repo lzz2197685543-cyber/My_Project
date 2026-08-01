@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'blog/base.html' %}
+
+{% block title %}{{ post.title }} - LZZ 博客{% endblock %}
+
+{% block content %}
+<article class="post-view">
+    <span class="category-tag">{{ post.category.name }}</span>
+    <div class="post-header">
+        <h1>{{ post.title }}</h1>
+        {% if user.is_authenticated %}
+            <form method="post" action="{% url 'blog:toggle_favorite' post.pk %}">
+                {% csrf_token %}
+                <button type="submit" class="fav-btn">
+                    {% if user in post.favorites.all %}
+                        ♥ 已收藏
+                    {% else %}
+                        ♡ 收藏
+                    {% endif %}
+                </button>
+            </form>
+        {% endif %}
+    </div>
+    <time>{{ post.created_at|date:"Y-m-d" }}</time>
+    <div class="content">{{ post.content|safe }}</div>
+    <a href="{% url 'blog:index' %}" class="back-link">← 返回首页</a>
+</article>
+{% endblock %}
