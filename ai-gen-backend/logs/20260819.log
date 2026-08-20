@@ -1,0 +1,95 @@
+2026-08-19 16:08:31 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-19 16:08:54 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-19 16:14:42 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-19 16:14:58 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-19 16:20:13 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-19 16:29:25 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-19 16:30:30 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-19 16:35:55 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-19 16:41:31 - client_bailian - INFO - ✅ BailianClient 初始化完成，API Key: sk-ws-H....34KV
+2026-08-19 16:42:22 - client_bailian - INFO - ✅ BailianClient 初始化完成，API Key: sk-ws-H....34KV
+2026-08-19 16:47:38 - client_bailian - INFO - ✅ BailianClient 初始化完成，API Key: sk-ws-H....34KV
+2026-08-19 16:48:09 - client_bailian - INFO - ✅ BailianClient 初始化完成，API Key: sk-ws-H....34KV
+2026-08-19 16:50:07 - client_bailian - INFO - ✅ BailianClient 初始化完成，API Key: sk-ws-H....34KV
+2026-08-19 17:30:39 - ai_service - INFO - 🔄 创建新的客户端: provider=yi
+2026-08-19 17:30:39 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-19 17:36:07 - ai_service - INFO - 🔄 创建新的客户端: provider=bailian
+2026-08-19 17:36:07 - client_bailian - INFO - ✅ BailianClient 初始化完成，API Key: sk-ws-H....34KV
+2026-08-19 17:44:30 - ai_service - INFO - 🔄 创建新的客户端: provider=yi
+2026-08-19 17:44:30 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-19 17:44:37 - image_service - INFO - ✅ 提示词优化完成: 帮我生成一张小猫戴着头盔骑着公路车在海边的自拍视角的图片... -> 生成一张小猫戴着头盔骑着一辆专业公路车在风景优美的海边骑行，采用自拍视角，仿佛是小猫自己拿着手机拍摄...
+2026-08-19 17:48:41 - ai_service - INFO - 🔄 创建新的客户端: provider=bailian
+2026-08-19 17:48:41 - client_bailian - INFO - ✅ BailianClient 初始化完成，API Key: sk-ws-H....34KV
+2026-08-19 17:48:52 - image_service - INFO - ✅ 提示词优化完成: 帮我生成一张小猫戴着头盔骑着公路车在海边的自拍视角的图片... -> 一只可爱的拟人化小猫戴着头盔，骑着一辆公路车行驶在海边公路上，自拍视角，前爪伸展拿着相机或手机进行自...
+2026-08-19 17:48:53 - client_bailian - ERROR - HTTP 400: {"code":"InvalidParameter","message":"Model not exist.","request_id":"291b5e0c-1ba2-9060-bf51-6e6170c7e836"}
+2026-08-19 17:50:51 - ai_service - INFO - 🔄 创建新的客户端: provider=yi
+2026-08-19 17:50:51 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-19 17:51:00 - image_service - INFO - ✅ 提示词优化完成: 帮我生成一张小猫戴着头盔骑着公路车在海边的自拍视角的图片... -> 自拍视角，一只可爱的小猫戴着专业骑行头盔，骑在一辆时尚的公路自行车上，背景是阳光明媚的海边公路。场景...
+2026-08-19 17:52:12 - ai_service - INFO - 🔄 创建新的客户端: provider=yi
+2026-08-19 17:52:12 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-19 17:52:21 - image_service - INFO - ✅ 提示词优化完成: 帮我生成一张小猫戴着头盔骑着公路车在海边的自拍视角的图片... -> 一只毛茸茸的橘色小猫戴着一顶亮红色的微型自行车头盔，骑在一辆银色的公路车上，沿着阳光明媚的海岸线前行...
+2026-08-19 17:52:27 - client_yi - INFO - ✅ 图片数据获取成功，长度: 1020996
+2026-08-19 17:53:25 - ai_service - INFO - 🔄 创建新的客户端: provider=yi
+2026-08-19 17:53:25 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-19 17:53:31 - image_service - INFO - ✅ 提示词优化完成: 帮我生成一张小猫戴着头盔骑着公路车在海边的自拍视角的图片... -> 一只毛茸茸的小猫戴着一个酷炫的摩托车头盔，正骑在一辆闪亮的公路自行车上，沿着风景如画的海岸公路骑行。...
+2026-08-19 17:53:36 - client_yi - INFO - ✅ 图片数据获取成功，长度: 1018092
+2026-08-19 17:53:36 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\text_to_image\20260819_175336\generated_01.png
+2026-08-19 17:54:48 - ai_service - INFO - 🔄 创建新的客户端: provider=yi
+2026-08-19 17:54:48 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-19 17:54:55 - image_service - INFO - ✅ 提示词优化完成: 帮我生成一张小猫戴着头盔骑着公路车在海边的自拍视角的图片... -> 自拍视角下，一只小猫戴着一顶精致的流线型头盔，正骑着一辆造型时尚的公路自行车，沿着阳光明媚的海岸线公...
+2026-08-19 17:55:01 - client_yi - INFO - ✅ 图片数据获取成功，长度: 983420
+2026-08-19 17:55:01 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\text_to_image\20260819_175501\generated_01.png
+2026-08-19 17:55:34 - ai_service - INFO - 🔄 创建新的客户端: provider=bailian
+2026-08-19 17:55:34 - client_bailian - INFO - ✅ BailianClient 初始化完成，API Key: sk-ws-H....34KV
+2026-08-19 17:55:44 - image_service - INFO - ✅ 提示词优化完成: 帮我生成一张小猫戴着头盔骑着公路车在海边的自拍视角的图片... -> 一张自拍视角的可爱小猫骑着公路车在海边的照片，小猫戴着运动头盔，毛茸茸的脸上带着活泼神情，前爪扶着公...
+2026-08-19 17:55:48 - image_service - INFO - ✅ 图片已下载: D:\sd14\AI_GEN\ai-gen-backend\data\output\text_to_image\20260819_175548\generated_01.png
+2026-08-19 17:57:57 - ai_service - INFO - 🔄 创建新的客户端: provider=yi
+2026-08-19 17:57:57 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-19 17:58:04 - image_service - INFO - ✅ 提示词优化完成: 帮我根据这张图片生成动漫的图片... -> 生成一张基于原图的动漫风格图片，采用高对比度色彩、精细线条和柔和的阴影，融合日本动漫的典型特征如大眼...
+2026-08-19 18:00:14 - ai_service - INFO - 🔄 创建新的客户端: provider=yi
+2026-08-19 18:00:14 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-19 18:00:23 - image_service - INFO - ✅ 提示词优化完成: 帮我根据这张图片生成动漫的图片... -> 基于原始图片，生成一幅高品质动漫风格插图，画面采用生动的动漫视觉风格，角色造型可爱或酷炫，场景细节丰...
+2026-08-19 18:00:33 - client_yi - INFO - ✅ 图生图图片数据获取成功，长度: 945980
+2026-08-19 18:00:33 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\image_to_image\20260819_180033
+2026-08-19 18:00:33 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\image_to_image\20260819_180033\generated_01.png
+2026-08-19 18:01:10 - ai_service - INFO - 🔄 创建新的客户端: provider=yi
+2026-08-19 18:01:10 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-19 18:01:16 - image_service - INFO - ✅ 提示词优化完成: 帮我根据这张图片生成动漫的图片... -> 请基于这张图片的风格，生成一张高质量的动漫风格插画。采用细腻的笔触和柔和的色彩过渡，呈现梦幻般的氛围...
+2026-08-19 18:02:31 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\image_to_image\20260819_180231
+2026-08-19 18:02:31 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\image_to_image\20260819_180231\generated_01.png
+2026-08-19 18:03:51 - ai_service - INFO - 🔄 创建新的客户端: provider=yi
+2026-08-19 18:03:51 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-19 18:03:56 - client_yi - ERROR - Fuse images failed: 'NoneType' object is not subscriptable
+2026-08-19 18:05:18 - ai_service - INFO - 🔄 创建新的客户端: provider=yi
+2026-08-19 18:05:18 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-19 18:05:32 - client_yi - INFO - ✅ 融合图片数据获取成功，长度: 2232012
+2026-08-19 18:05:32 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\fused\20260819_180532
+2026-08-19 18:05:32 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\fused\20260819_180532\fused_01.png
+2026-08-19 18:07:32 - ai_service - INFO - 🔄 创建新的客户端: provider=yi
+2026-08-19 18:07:32 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-19 18:07:51 - image_service - INFO - ✅ 提示词优化完成: 帮我合并这两种图片... -> 将两张图像无缝融合，创作一幅超现实数字艺术作品，采用双重曝光与图层叠加技术，在黄昏的魔法时刻拍摄，柔...
+2026-08-19 18:09:03 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\fused\20260819_180903
+2026-08-19 18:09:03 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\fused\20260819_180903\fused_01.png
+2026-08-19 18:15:35 - ai_service - INFO - 🔄 创建新的客户端: provider=yi
+2026-08-19 18:15:35 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-19 18:15:39 - image_service - INFO - ✅ 提示词优化完成: 帮我合并这两种图片... -> 合并两张图片，使用无缝拼接技术，确保色彩、光影和纹理的完美过渡，采用专业摄影视角，营造视觉统一的画面...
+2026-08-19 18:15:50 - client_yi - INFO - ✅ 融合图片数据获取成功，长度: 633740
+2026-08-19 18:15:50 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\fused\20260819_181550
+2026-08-19 18:15:50 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\fused\20260819_181550\fused_01.png
+2026-08-19 18:16:10 - ai_service - INFO - 🔄 创建新的客户端: provider=bailian
+2026-08-19 18:16:10 - client_bailian - INFO - ✅ BailianClient 初始化完成，API Key: sk-ws-H....34KV
+2026-08-19 18:16:27 - image_service - INFO - ✅ 提示词优化完成: 帮我根据这张图片生成动漫的图片... -> 请根据这张参考图片生成动漫风格图片，完整保留原图主体、人物特征、姿势、服装、构图与镜头角度，将其转化...
+2026-08-19 18:16:33 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\image_to_image\20260819_181633
+2026-08-19 18:16:33 - image_service - INFO - ✅ 图片已下载: D:\sd14\AI_GEN\ai-gen-backend\data\output\image_to_image\20260819_181633\generated_01.png
+2026-08-19 23:29:32 - ai_service - INFO - 🔄 创建新的客户端: provider=bailian
+2026-08-19 23:29:32 - client_bailian - INFO - ✅ BailianClient 初始化完成，API Key: sk-ws-H....34KV
+2026-08-19 23:29:43 - image_service - INFO - ✅ 提示词优化完成: 帮我根据这张图片生成动漫的图片... -> 根据这张图片生成动漫风格图片，忠实保留原图中的主体、人物姿态、服装特征、构图比例与整体氛围，转换为高...
+2026-08-19 23:29:44 - client_bailian - ERROR - HTTP 400: {"code":"InvalidParameter","message":"Model not exist.","request_id":"a0223b07-64fe-9732-97b5-bb754561d579"}
+2026-08-19 23:44:28 - client_bailian - INFO - ✅ BailianClient 初始化完成，API Key: sk-ws-H....34KV
+2026-08-19 23:45:23 - client_bailian - INFO - ✅ BailianClient 初始化完成，API Key: sk-ws-H....34KV
+2026-08-19 23:52:59 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-19 23:56:33 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-19 23:56:42 - client_yi - ERROR - HTTP 400: {"error":{"message":"null is not one of ['system', 'assistant', 'user', 'tool', 'function']","localized_message":"Unknown error","type":"invalid_request_error","param":"","code":"invalid_parameter_err
+2026-08-19 23:57:22 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-19 23:58:01 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-19 23:58:10 - client_yi - INFO - ✅ 图生图图片数据获取成功，长度: 776732

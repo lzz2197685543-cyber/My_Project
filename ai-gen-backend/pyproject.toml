@@ -1,0 +1,12 @@
+[project]
+name = "ai-gen-backend"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "aiofiles>=25.1.0",
+    "aiohttp>=3.14.3",
+    "fastapi[standard]>=0.141.1",
+    "openai>=3.3.0",
+    "pillow>=12.3.0",
+    "pytest>=9.1.1",
+]

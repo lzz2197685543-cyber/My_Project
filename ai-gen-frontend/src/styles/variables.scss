@@ -1,0 +1,76 @@
+// src/styles/variables.scss
+// ✅ 使用 CSS 变量 + 默认值
+
+:root {
+  // ==================== 颜色变量 ====================
+
+  // 主色
+  --primary-color: #409EFF;
+  --primary-light: #66b1ff;
+  --primary-dark: #337ecc;
+
+  // 成功/警告/危险
+  --success-color: #67C23A;
+  --warning-color: #E6A23C;
+  --danger-color: #F56C6C;
+
+  // 文字颜色
+  --text-primary: #303133;
+  --text-regular: #606266;
+  --text-secondary: #909399;
+  --text-placeholder: #C0C4CC;
+
+  // 背景色
+  --bg-color: #f5f7fa;
+  --bg-card: #ffffff;
+
+  // 边框
+  --border-color: #e4e7ed;
+
+  // 阴影
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.15);
+}
+
+// ==================== 暗色主题 ====================
+
+[data-theme="dark"] {
+  --bg-color: #141414;
+  --bg-card: #1d1d1d;
+  --text-primary: #e4e4e4;
+  --text-regular: #c0c0c0;
+  --text-secondary: #a0a0a0;
+  --text-placeholder: #666666;
+  --border-color: #3a3a3a;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.6);
+}
+
+// ==================== 尺寸变量 ====================
+
+$header-height: 60px;
+$sidebar-width: 220px;
+$sidebar-collapsed-width: 64px;
+$control-panel-width: 38%;
+
+// ==================== 圆角 ====================
+
+$border-radius: 8px;
+$border-radius-lg: 12px;
+$border-radius-sm: 4px;
+
+// ==================== 过渡 ====================
+
+$transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+// ==================== 导出变量供 JS 使用 ====================
+
+:export {
+  primaryColor: var(--primary-color);
+  successColor: var(--success-color);
+  warningColor: var(--warning-color);
+  dangerColor: var(--danger-color);
+}

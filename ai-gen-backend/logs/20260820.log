@@ -1,0 +1,575 @@
+2026-08-20 00:04:38 - ai_service - INFO - 🔄 创建新的客户端: provider=yi
+2026-08-20 00:04:38 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-20 00:04:43 - image_service - INFO - ✅ 提示词优化完成: 帮我根据这张图片生成动漫的图片... -> 请将这张图片转化为动漫风格，采用宫崎骏式的细腻手绘效果，背景为梦幻般的田园风光，阳光透过树叶洒下斑驳...
+2026-08-20 00:04:55 - client_yi - INFO - ✅ 图生图图片数据获取成功，长度: 1252412
+2026-08-20 00:04:55 - image_service - INFO - 📁 输出目录: D:\AI_GEN\ai-gen-backend\data\output\image_to_image\20260820_000455
+2026-08-20 00:04:55 - image_service - INFO - ✅ 图片已保存: D:\AI_GEN\ai-gen-backend\data\output\image_to_image\20260820_000455\generated_01.png
+2026-08-20 00:06:35 - ai_service - INFO - 🔄 创建新的客户端: provider=bailian
+2026-08-20 00:06:35 - client_bailian - INFO - ✅ BailianClient 初始化完成，API Key: sk-ws-H....34KV
+2026-08-20 00:06:44 - image_service - INFO - ✅ 提示词优化完成: 帮我根据这张图片生成动漫的图片... -> 根据这张参考图片生成高质量动漫风格图像，完整保留原图中的主体人物、姿势、服装特征与画面构图；转化为精...
+2026-08-20 00:06:51 - image_service - INFO - 📁 输出目录: D:\AI_GEN\ai-gen-backend\data\output\image_to_image\20260820_000651
+2026-08-20 00:06:52 - image_service - INFO - ✅ 图片已下载: D:\AI_GEN\ai-gen-backend\data\output\image_to_image\20260820_000651\generated_01.png
+2026-08-20 00:07:04 - ai_service - INFO - 🔄 创建新的客户端: provider=bailian
+2026-08-20 00:07:04 - client_bailian - INFO - ✅ BailianClient 初始化完成，API Key: sk-ws-H....34KV
+2026-08-20 00:07:12 - image_service - INFO - ✅ 提示词优化完成: 帮我生成一张小猫戴着头盔骑着公路车在海边的自拍视角的图片... -> 一张超写实风格的自拍视角图片，一只可爱的小猫戴着头盔，骑着一辆公路车行驶在海边公路上，前爪微微伸向镜...
+2026-08-20 00:07:17 - image_service - INFO - 📁 输出目录: D:\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_000717
+2026-08-20 00:07:17 - image_service - INFO - ✅ 图片已下载: D:\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_000717\generated_01.png
+2026-08-20 00:12:49 - dependencies - INFO - ✅ ChatService 初始化完成
+2026-08-20 00:25:57 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 00:25:57 - main - INFO - 📁 静态文件服务: /output -> D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 00:26:00 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 00:26:00 - main - INFO - 📁 静态文件服务: /output -> D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 00:26:00 - main - INFO - ============================================================
+2026-08-20 00:26:00 - main - INFO - 🚀 AI Generation Backend v1.0.0
+2026-08-20 00:26:00 - main - INFO - ============================================================
+2026-08-20 00:26:00 - main - INFO - 📍 配置目录: D:\AI_GEN\ai-gen-backend\config
+2026-08-20 00:26:00 - main - INFO - 📁 数据目录: D:\AI_GEN\ai-gen-backend\data
+2026-08-20 00:26:00 - main - INFO - 📁 输入目录: D:\AI_GEN\ai-gen-backend\data\input
+2026-08-20 00:26:00 - main - INFO - 📁 输出目录: D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 00:26:00 - main - INFO - 📁 日志目录: D:\AI_GEN\ai-gen-backend\logs
+2026-08-20 00:26:00 - main - INFO - 🔧 调试模式: True
+2026-08-20 00:26:00 - main - INFO - 🔑 API易 Key: 已配置
+2026-08-20 00:26:00 - main - INFO - 🔑 百炼 Key: 已配置
+2026-08-20 00:26:00 - main - INFO - ============================================================
+2026-08-20 00:26:01 - main - INFO - 🛑 应用正在关闭...
+2026-08-20 00:26:13 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 00:26:13 - main - INFO - 📁 静态文件服务: /output -> D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 00:26:13 - main - INFO - ============================================================
+2026-08-20 00:26:13 - main - INFO - 🚀 AI Generation Backend v1.0.0
+2026-08-20 00:26:13 - main - INFO - ============================================================
+2026-08-20 00:26:13 - main - INFO - 📍 配置目录: D:\AI_GEN\ai-gen-backend\config
+2026-08-20 00:26:13 - main - INFO - 📁 数据目录: D:\AI_GEN\ai-gen-backend\data
+2026-08-20 00:26:13 - main - INFO - 📁 输入目录: D:\AI_GEN\ai-gen-backend\data\input
+2026-08-20 00:26:13 - main - INFO - 📁 输出目录: D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 00:26:13 - main - INFO - 📁 日志目录: D:\AI_GEN\ai-gen-backend\logs
+2026-08-20 00:26:13 - main - INFO - 🔧 调试模式: True
+2026-08-20 00:26:13 - main - INFO - 🔑 API易 Key: 已配置
+2026-08-20 00:26:13 - main - INFO - 🔑 百炼 Key: 已配置
+2026-08-20 00:26:13 - main - INFO - ============================================================
+2026-08-20 00:28:01 - main - INFO - 🛑 应用正在关闭...
+2026-08-20 00:28:03 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 00:28:03 - main - INFO - 📁 静态文件服务: /output -> D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 00:28:03 - main - INFO - ============================================================
+2026-08-20 00:28:03 - main - INFO - 🚀 AI Generation Backend v1.0.0
+2026-08-20 00:28:03 - main - INFO - ============================================================
+2026-08-20 00:28:03 - main - INFO - 📍 配置目录: D:\AI_GEN\ai-gen-backend\config
+2026-08-20 00:28:03 - main - INFO - 📁 数据目录: D:\AI_GEN\ai-gen-backend\data
+2026-08-20 00:28:03 - main - INFO - 📁 输入目录: D:\AI_GEN\ai-gen-backend\data\input
+2026-08-20 00:28:03 - main - INFO - 📁 输出目录: D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 00:28:03 - main - INFO - 📁 日志目录: D:\AI_GEN\ai-gen-backend\logs
+2026-08-20 00:28:03 - main - INFO - 🔧 调试模式: True
+2026-08-20 00:28:03 - main - INFO - 🔑 API易 Key: 已配置
+2026-08-20 00:28:03 - main - INFO - 🔑 百炼 Key: 已配置
+2026-08-20 00:28:03 - main - INFO - ============================================================
+2026-08-20 00:28:03 - main - INFO - 🛑 应用正在关闭...
+2026-08-20 00:28:07 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 00:28:07 - main - INFO - 📁 静态文件服务: /output -> D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 00:28:07 - main - INFO - ============================================================
+2026-08-20 00:28:07 - main - INFO - 🚀 AI Generation Backend v1.0.0
+2026-08-20 00:28:07 - main - INFO - ============================================================
+2026-08-20 00:28:07 - main - INFO - 📍 配置目录: D:\AI_GEN\ai-gen-backend\config
+2026-08-20 00:28:07 - main - INFO - 📁 数据目录: D:\AI_GEN\ai-gen-backend\data
+2026-08-20 00:28:07 - main - INFO - 📁 输入目录: D:\AI_GEN\ai-gen-backend\data\input
+2026-08-20 00:28:07 - main - INFO - 📁 输出目录: D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 00:28:07 - main - INFO - 📁 日志目录: D:\AI_GEN\ai-gen-backend\logs
+2026-08-20 00:28:07 - main - INFO - 🔧 调试模式: True
+2026-08-20 00:28:07 - main - INFO - 🔑 API易 Key: 已配置
+2026-08-20 00:28:07 - main - INFO - 🔑 百炼 Key: 已配置
+2026-08-20 00:28:07 - main - INFO - ============================================================
+2026-08-20 00:32:50 - exceptions - WARNING - 验证失败: [{'field': 'body.23', 'message': 'JSON decode error', 'type': 'json_invalid'}]
+2026-08-20 00:34:02 - dependencies - INFO - ✅ ChatService 初始化完成
+2026-08-20 00:34:02 - ai_service - INFO - 🔄 创建新的客户端: provider=yi
+2026-08-20 00:34:02 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-20 00:35:03 - ai_service - INFO - 🔄 创建新的客户端: provider=bailian
+2026-08-20 00:35:03 - client_bailian - INFO - ✅ BailianClient 初始化完成，API Key: sk-ws-H....34KV
+2026-08-20 00:35:15 - client_bailian - ERROR - Bailian chat failed: 200, message='Attempt to decode JSON with unexpected mimetype: text/event-stream;charset=utf-8', url='https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions'
+2026-08-20 00:36:09 - client_yi - ERROR - Stream chat failed: list index out of range
+2026-08-20 00:38:20 - dependencies - INFO - ✅ ImageService 初始化完成
+2026-08-20 00:38:27 - image_service - INFO - ✅ 提示词优化完成: 帮我生成一张可爱小猫的照片... -> 一只毛茸茸的波斯小猫，蜷缩在洒满午后阳光的窗台上，旁边有一盆绿植。它抬起圆润的脸庞，用好奇的湛蓝色大...
+2026-08-20 00:38:32 - client_yi - INFO - ✅ 图片数据获取成功，长度: 945600
+2026-08-20 00:38:32 - image_service - INFO - 📁 输出目录: D:\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_003832
+2026-08-20 00:38:32 - image_service - INFO - ✅ 图片已保存: D:\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_003832\generated_01.png
+2026-08-20 00:39:43 - image_service - INFO - ✅ 提示词优化完成: 帮我生成一张可爱小猫的照片... -> 一张可爱小猫的高质量照片，毛茸茸的小猫坐在柔软的浅色毛毯上，圆圆的大眼睛清澈明亮，粉嫩的小鼻子和细软...
+2026-08-20 00:40:08 - image_service - INFO - 📁 输出目录: D:\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_004008
+2026-08-20 00:40:08 - image_service - INFO - ✅ 图片已下载: D:\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_004008\generated_01.png
+2026-08-20 00:41:35 - image_service - INFO - ✅ 提示词优化完成: 帮我根据这张图片生成动漫的图片... -> 将原始照片转化为日系动漫风格插画，采用新海诚式光影美学与京都动画的精美细节处理。画面需呈现高对比度、...
+2026-08-20 00:41:46 - client_yi - INFO - ✅ 图生图图片数据获取成功，长度: 1036728
+2026-08-20 00:41:46 - image_service - INFO - 📁 输出目录: D:\AI_GEN\ai-gen-backend\data\output\image_to_image\20260820_004146
+2026-08-20 00:41:46 - image_service - INFO - ✅ 图片已保存: D:\AI_GEN\ai-gen-backend\data\output\image_to_image\20260820_004146\generated_01.png
+2026-08-20 00:42:43 - image_service - INFO - ✅ 提示词优化完成: 帮我根据这张图片生成动漫的图片... -> 根据这张参考图生成一张高质量动漫风格图片，完整保留原图中的主体人物、服装特征、姿态动作、场景布局与画...
+2026-08-20 00:42:53 - image_service - INFO - 📁 输出目录: D:\AI_GEN\ai-gen-backend\data\output\image_to_image\20260820_004253
+2026-08-20 00:42:53 - image_service - INFO - ✅ 图片已下载: D:\AI_GEN\ai-gen-backend\data\output\image_to_image\20260820_004253\generated_01.png
+2026-08-20 00:43:37 - main - INFO - 🛑 应用正在关闭...
+2026-08-20 00:43:38 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 00:43:38 - main - INFO - 📁 静态文件服务: /output -> D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 00:43:38 - main - INFO - ============================================================
+2026-08-20 00:43:38 - main - INFO - 🚀 AI Generation Backend v1.0.0
+2026-08-20 00:43:38 - main - INFO - ============================================================
+2026-08-20 00:43:38 - main - INFO - 📍 配置目录: D:\AI_GEN\ai-gen-backend\config
+2026-08-20 00:43:38 - main - INFO - 📁 数据目录: D:\AI_GEN\ai-gen-backend\data
+2026-08-20 00:43:38 - main - INFO - 📁 输入目录: D:\AI_GEN\ai-gen-backend\data\input
+2026-08-20 00:43:38 - main - INFO - 📁 输出目录: D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 00:43:38 - main - INFO - 📁 日志目录: D:\AI_GEN\ai-gen-backend\logs
+2026-08-20 00:43:38 - main - INFO - 🔧 调试模式: True
+2026-08-20 00:43:38 - main - INFO - 🔑 API易 Key: 已配置
+2026-08-20 00:43:38 - main - INFO - 🔑 百炼 Key: 已配置
+2026-08-20 00:43:38 - main - INFO - ============================================================
+2026-08-20 00:44:18 - exceptions - WARNING - 验证失败: [{'field': 'body.28', 'message': 'JSON decode error', 'type': 'json_invalid'}]
+2026-08-20 00:44:20 - exceptions - WARNING - 验证失败: [{'field': 'body.28', 'message': 'JSON decode error', 'type': 'json_invalid'}]
+2026-08-20 00:44:42 - main - INFO - 🛑 应用正在关闭...
+2026-08-20 00:44:43 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 00:44:43 - main - INFO - 📁 静态文件服务: /output -> D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 00:44:43 - main - INFO - ============================================================
+2026-08-20 00:44:43 - main - INFO - 🚀 AI Generation Backend v1.0.0
+2026-08-20 00:44:43 - main - INFO - ============================================================
+2026-08-20 00:44:43 - main - INFO - 📍 配置目录: D:\AI_GEN\ai-gen-backend\config
+2026-08-20 00:44:43 - main - INFO - 📁 数据目录: D:\AI_GEN\ai-gen-backend\data
+2026-08-20 00:44:43 - main - INFO - 📁 输入目录: D:\AI_GEN\ai-gen-backend\data\input
+2026-08-20 00:44:43 - main - INFO - 📁 输出目录: D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 00:44:43 - main - INFO - 📁 日志目录: D:\AI_GEN\ai-gen-backend\logs
+2026-08-20 00:44:43 - main - INFO - 🔧 调试模式: True
+2026-08-20 00:44:43 - main - INFO - 🔑 API易 Key: 已配置
+2026-08-20 00:44:43 - main - INFO - 🔑 百炼 Key: 已配置
+2026-08-20 00:44:43 - main - INFO - ============================================================
+2026-08-20 00:47:14 - main - INFO - 🛑 应用正在关闭...
+2026-08-20 00:47:16 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 00:47:16 - main - INFO - 📁 静态文件服务: /output -> D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 00:47:16 - main - INFO - ============================================================
+2026-08-20 00:47:16 - main - INFO - 🚀 AI Generation Backend v1.0.0
+2026-08-20 00:47:16 - main - INFO - ============================================================
+2026-08-20 00:47:16 - main - INFO - 📍 配置目录: D:\AI_GEN\ai-gen-backend\config
+2026-08-20 00:47:16 - main - INFO - 📁 数据目录: D:\AI_GEN\ai-gen-backend\data
+2026-08-20 00:47:16 - main - INFO - 📁 输入目录: D:\AI_GEN\ai-gen-backend\data\input
+2026-08-20 00:47:16 - main - INFO - 📁 输出目录: D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 00:47:16 - main - INFO - 📁 日志目录: D:\AI_GEN\ai-gen-backend\logs
+2026-08-20 00:47:16 - main - INFO - 🔧 调试模式: True
+2026-08-20 00:47:16 - main - INFO - 🔑 API易 Key: 已配置
+2026-08-20 00:47:16 - main - INFO - 🔑 百炼 Key: 已配置
+2026-08-20 00:47:16 - main - INFO - ============================================================
+2026-08-20 00:47:31 - main - INFO - 🛑 应用正在关闭...
+2026-08-20 00:47:36 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 00:47:36 - main - INFO - 📁 静态文件服务: /output -> D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 00:47:36 - main - INFO - ============================================================
+2026-08-20 00:47:36 - main - INFO - 🚀 AI Generation Backend v1.0.0
+2026-08-20 00:47:36 - main - INFO - ============================================================
+2026-08-20 00:47:36 - main - INFO - 📍 配置目录: D:\AI_GEN\ai-gen-backend\config
+2026-08-20 00:47:36 - main - INFO - 📁 数据目录: D:\AI_GEN\ai-gen-backend\data
+2026-08-20 00:47:36 - main - INFO - 📁 输入目录: D:\AI_GEN\ai-gen-backend\data\input
+2026-08-20 00:47:36 - main - INFO - 📁 输出目录: D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 00:47:36 - main - INFO - 📁 日志目录: D:\AI_GEN\ai-gen-backend\logs
+2026-08-20 00:47:36 - main - INFO - 🔧 调试模式: True
+2026-08-20 00:47:36 - main - INFO - 🔑 API易 Key: 已配置
+2026-08-20 00:47:36 - main - INFO - 🔑 百炼 Key: 已配置
+2026-08-20 00:47:36 - main - INFO - ============================================================
+2026-08-20 00:48:16 - main - INFO - 🛑 应用正在关闭...
+2026-08-20 00:48:17 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 00:48:17 - main - INFO - 📁 静态文件服务: /output -> D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 00:48:17 - main - INFO - ============================================================
+2026-08-20 00:48:17 - main - INFO - 🚀 AI Generation Backend v1.0.0
+2026-08-20 00:48:17 - main - INFO - ============================================================
+2026-08-20 00:48:17 - main - INFO - 📍 配置目录: D:\AI_GEN\ai-gen-backend\config
+2026-08-20 00:48:17 - main - INFO - 📁 数据目录: D:\AI_GEN\ai-gen-backend\data
+2026-08-20 00:48:17 - main - INFO - 📁 输入目录: D:\AI_GEN\ai-gen-backend\data\input
+2026-08-20 00:48:17 - main - INFO - 📁 输出目录: D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 00:48:17 - main - INFO - 📁 日志目录: D:\AI_GEN\ai-gen-backend\logs
+2026-08-20 00:48:17 - main - INFO - 🔧 调试模式: True
+2026-08-20 00:48:17 - main - INFO - 🔑 API易 Key: 已配置
+2026-08-20 00:48:17 - main - INFO - 🔑 百炼 Key: 已配置
+2026-08-20 00:48:17 - main - INFO - ============================================================
+2026-08-20 00:48:38 - main - INFO - 🛑 应用正在关闭...
+2026-08-20 00:48:39 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 00:48:39 - main - INFO - 📁 静态文件服务: /output -> D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 00:48:39 - main - INFO - ============================================================
+2026-08-20 00:48:39 - main - INFO - 🚀 AI Generation Backend v1.0.0
+2026-08-20 00:48:39 - main - INFO - ============================================================
+2026-08-20 00:48:39 - main - INFO - 📍 配置目录: D:\AI_GEN\ai-gen-backend\config
+2026-08-20 00:48:39 - main - INFO - 📁 数据目录: D:\AI_GEN\ai-gen-backend\data
+2026-08-20 00:48:39 - main - INFO - 📁 输入目录: D:\AI_GEN\ai-gen-backend\data\input
+2026-08-20 00:48:39 - main - INFO - 📁 输出目录: D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 00:48:39 - main - INFO - 📁 日志目录: D:\AI_GEN\ai-gen-backend\logs
+2026-08-20 00:48:39 - main - INFO - 🔧 调试模式: True
+2026-08-20 00:48:39 - main - INFO - 🔑 API易 Key: 已配置
+2026-08-20 00:48:39 - main - INFO - 🔑 百炼 Key: 已配置
+2026-08-20 00:48:39 - main - INFO - ============================================================
+2026-08-20 00:49:28 - dependencies - INFO - ✅ ChatService 初始化完成
+2026-08-20 00:49:28 - ai_service - INFO - 🔄 创建新的客户端: provider=yi
+2026-08-20 00:49:28 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-20 00:50:12 - dependencies - INFO - ✅ ImageService 初始化完成
+2026-08-20 00:50:19 - image_service - INFO - ✅ 提示词优化完成: 帮我生成一张可爱小猫的照片... -> 生成一张高分辨率照片，展现一只毛茸茸的可爱小猫，品种为英国短毛猫，有着明亮的蓝色大眼睛和银灰色虎斑花...
+2026-08-20 00:50:27 - client_yi - INFO - ✅ 图片数据获取成功，长度: 972484
+2026-08-20 00:50:27 - image_service - INFO - 📁 输出目录: D:\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_005027
+2026-08-20 00:50:27 - image_service - INFO - ✅ 图片已保存: D:\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_005027\generated_01.png
+2026-08-20 00:51:18 - image_service - INFO - ✅ 提示词优化完成: 帮我优化这种图片... -> 一个穿着时尚休闲装的人站在城市街头，背景是霓虹灯和现代建筑，营造出都市夜晚的活力氛围。采用广角镜头拍...
+2026-08-20 00:51:25 - client_yi - INFO - ✅ 图生图图片数据获取成功，长度: 1159864
+2026-08-20 00:51:25 - image_service - INFO - 📁 输出目录: D:\AI_GEN\ai-gen-backend\data\output\image_to_image\20260820_005125
+2026-08-20 00:51:25 - image_service - INFO - ✅ 图片已保存: D:\AI_GEN\ai-gen-backend\data\output\image_to_image\20260820_005125\generated_01.png
+2026-08-20 00:52:51 - image_service - INFO - ✅ 提示词优化完成: 帮我融合这两张图片... -> 请将两张图片进行无缝融合，采用专业级的多重曝光技术，在柔和的黄昏光线下，以动态透视角度展现，营造出梦...
+2026-08-20 00:53:01 - client_yi - INFO - ✅ 融合图片数据获取成功，长度: 808144
+2026-08-20 00:53:01 - image_service - INFO - 📁 输出目录: D:\AI_GEN\ai-gen-backend\data\output\fused\20260820_005301
+2026-08-20 00:53:01 - image_service - INFO - ✅ 图片已保存: D:\AI_GEN\ai-gen-backend\data\output\fused\20260820_005301\fused_01.png
+2026-08-20 01:02:32 - main - INFO - 🛑 应用正在关闭...
+2026-08-20 01:02:33 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 01:02:33 - main - INFO - 📁 静态文件服务: /output -> D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 01:02:33 - main - INFO - ============================================================
+2026-08-20 01:02:33 - main - INFO - 🚀 AI Generation Backend v1.0.0
+2026-08-20 01:02:33 - main - INFO - ============================================================
+2026-08-20 01:02:33 - main - INFO - 📍 配置目录: D:\AI_GEN\ai-gen-backend\config
+2026-08-20 01:02:33 - main - INFO - 📁 数据目录: D:\AI_GEN\ai-gen-backend\data
+2026-08-20 01:02:33 - main - INFO - 📁 输入目录: D:\AI_GEN\ai-gen-backend\data\input
+2026-08-20 01:02:33 - main - INFO - 📁 输出目录: D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 01:02:33 - main - INFO - 📁 日志目录: D:\AI_GEN\ai-gen-backend\logs
+2026-08-20 01:02:33 - main - INFO - 🔧 调试模式: True
+2026-08-20 01:02:33 - main - INFO - 🔑 API易 Key: 已配置
+2026-08-20 01:02:33 - main - INFO - 🔑 百炼 Key: 已配置
+2026-08-20 01:02:33 - main - INFO - ============================================================
+2026-08-20 01:03:52 - main - INFO - 🛑 应用正在关闭...
+2026-08-20 01:03:53 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 01:03:53 - main - INFO - 📁 静态文件服务: /output -> D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 01:03:53 - main - INFO - ============================================================
+2026-08-20 01:03:53 - main - INFO - 🚀 AI Generation Backend v1.0.0
+2026-08-20 01:03:53 - main - INFO - ============================================================
+2026-08-20 01:03:53 - main - INFO - 📍 配置目录: D:\AI_GEN\ai-gen-backend\config
+2026-08-20 01:03:53 - main - INFO - 📁 数据目录: D:\AI_GEN\ai-gen-backend\data
+2026-08-20 01:03:53 - main - INFO - 📁 输入目录: D:\AI_GEN\ai-gen-backend\data\input
+2026-08-20 01:03:53 - main - INFO - 📁 输出目录: D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 01:03:53 - main - INFO - 📁 日志目录: D:\AI_GEN\ai-gen-backend\logs
+2026-08-20 01:03:53 - main - INFO - 🔧 调试模式: True
+2026-08-20 01:03:53 - main - INFO - 🔑 API易 Key: 已配置
+2026-08-20 01:03:53 - main - INFO - 🔑 百炼 Key: 已配置
+2026-08-20 01:03:53 - main - INFO - ============================================================
+2026-08-20 01:04:36 - main - INFO - 🛑 应用正在关闭...
+2026-08-20 01:04:37 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 01:04:37 - main - INFO - 📁 静态文件服务: /output -> D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 01:04:37 - main - INFO - ============================================================
+2026-08-20 01:04:37 - main - INFO - 🚀 AI Generation Backend v1.0.0
+2026-08-20 01:04:37 - main - INFO - ============================================================
+2026-08-20 01:04:37 - main - INFO - 📍 配置目录: D:\AI_GEN\ai-gen-backend\config
+2026-08-20 01:04:37 - main - INFO - 📁 数据目录: D:\AI_GEN\ai-gen-backend\data
+2026-08-20 01:04:37 - main - INFO - 📁 输入目录: D:\AI_GEN\ai-gen-backend\data\input
+2026-08-20 01:04:37 - main - INFO - 📁 输出目录: D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 01:04:37 - main - INFO - 📁 日志目录: D:\AI_GEN\ai-gen-backend\logs
+2026-08-20 01:04:37 - main - INFO - 🔧 调试模式: True
+2026-08-20 01:04:37 - main - INFO - 🔑 API易 Key: 已配置
+2026-08-20 01:04:37 - main - INFO - 🔑 百炼 Key: 已配置
+2026-08-20 01:04:37 - main - INFO - ============================================================
+2026-08-20 01:05:34 - dependencies - INFO - ✅ ChatService 初始化完成
+2026-08-20 01:05:34 - ai_service - INFO - 🔄 创建新的客户端: provider=yi
+2026-08-20 01:05:34 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-20 01:05:45 - client_yi - ERROR - Stream chat failed: list index out of range
+2026-08-20 01:06:52 - main - INFO - 🛑 应用正在关闭...
+2026-08-20 01:06:55 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 01:06:55 - main - INFO - 📁 静态文件服务: /output -> D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 01:06:55 - main - INFO - ============================================================
+2026-08-20 01:06:55 - main - INFO - 🚀 AI Generation Backend v1.0.0
+2026-08-20 01:06:55 - main - INFO - ============================================================
+2026-08-20 01:06:55 - main - INFO - 📍 配置目录: D:\AI_GEN\ai-gen-backend\config
+2026-08-20 01:06:55 - main - INFO - 📁 数据目录: D:\AI_GEN\ai-gen-backend\data
+2026-08-20 01:06:55 - main - INFO - 📁 输入目录: D:\AI_GEN\ai-gen-backend\data\input
+2026-08-20 01:06:55 - main - INFO - 📁 输出目录: D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 01:06:55 - main - INFO - 📁 日志目录: D:\AI_GEN\ai-gen-backend\logs
+2026-08-20 01:06:55 - main - INFO - 🔧 调试模式: True
+2026-08-20 01:06:55 - main - INFO - 🔑 API易 Key: 已配置
+2026-08-20 01:06:55 - main - INFO - 🔑 百炼 Key: 已配置
+2026-08-20 01:06:55 - main - INFO - ============================================================
+2026-08-20 01:07:40 - main - INFO - 🛑 应用正在关闭...
+2026-08-20 01:07:41 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 01:07:41 - main - INFO - 📁 静态文件服务: /output -> D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 01:07:41 - main - INFO - ============================================================
+2026-08-20 01:07:41 - main - INFO - 🚀 AI Generation Backend v1.0.0
+2026-08-20 01:07:41 - main - INFO - ============================================================
+2026-08-20 01:07:41 - main - INFO - 📍 配置目录: D:\AI_GEN\ai-gen-backend\config
+2026-08-20 01:07:41 - main - INFO - 📁 数据目录: D:\AI_GEN\ai-gen-backend\data
+2026-08-20 01:07:41 - main - INFO - 📁 输入目录: D:\AI_GEN\ai-gen-backend\data\input
+2026-08-20 01:07:41 - main - INFO - 📁 输出目录: D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 01:07:41 - main - INFO - 📁 日志目录: D:\AI_GEN\ai-gen-backend\logs
+2026-08-20 01:07:41 - main - INFO - 🔧 调试模式: True
+2026-08-20 01:07:41 - main - INFO - 🔑 API易 Key: 已配置
+2026-08-20 01:07:41 - main - INFO - 🔑 百炼 Key: 已配置
+2026-08-20 01:07:41 - main - INFO - ============================================================
+2026-08-20 01:07:49 - main - INFO - 🛑 应用正在关闭...
+2026-08-20 01:07:51 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 01:07:51 - main - INFO - 📁 静态文件服务: /output -> D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 01:07:51 - main - INFO - ============================================================
+2026-08-20 01:07:51 - main - INFO - 🚀 AI Generation Backend v1.0.0
+2026-08-20 01:07:51 - main - INFO - ============================================================
+2026-08-20 01:07:51 - main - INFO - 📍 配置目录: D:\AI_GEN\ai-gen-backend\config
+2026-08-20 01:07:51 - main - INFO - 📁 数据目录: D:\AI_GEN\ai-gen-backend\data
+2026-08-20 01:07:51 - main - INFO - 📁 输入目录: D:\AI_GEN\ai-gen-backend\data\input
+2026-08-20 01:07:51 - main - INFO - 📁 输出目录: D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 01:07:51 - main - INFO - 📁 日志目录: D:\AI_GEN\ai-gen-backend\logs
+2026-08-20 01:07:51 - main - INFO - 🔧 调试模式: True
+2026-08-20 01:07:51 - main - INFO - 🔑 API易 Key: 已配置
+2026-08-20 01:07:51 - main - INFO - 🔑 百炼 Key: 已配置
+2026-08-20 01:07:51 - main - INFO - ============================================================
+2026-08-20 01:08:06 - dependencies - INFO - ✅ ChatService 初始化完成
+2026-08-20 01:08:06 - ai_service - INFO - 🔄 创建新的客户端: provider=yi
+2026-08-20 01:08:06 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-20 01:08:42 - ai_service - INFO - 🔄 创建新的客户端: provider=bailian
+2026-08-20 01:08:42 - client_bailian - INFO - ✅ BailianClient 初始化完成，API Key: sk-ws-H....34KV
+2026-08-20 01:08:42 - client_bailian - ERROR - HTTP 400: {"error":{"message":"Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment","type":"Arrearage","param":
+2026-08-20 01:11:38 - main - INFO - 🛑 应用正在关闭...
+2026-08-20 01:11:40 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 01:11:40 - main - INFO - 📁 静态文件服务: /output -> D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 01:11:40 - main - INFO - ============================================================
+2026-08-20 01:11:40 - main - INFO - 🚀 AI Generation Backend v1.0.0
+2026-08-20 01:11:40 - main - INFO - ============================================================
+2026-08-20 01:11:40 - main - INFO - 📍 配置目录: D:\AI_GEN\ai-gen-backend\config
+2026-08-20 01:11:40 - main - INFO - 📁 数据目录: D:\AI_GEN\ai-gen-backend\data
+2026-08-20 01:11:40 - main - INFO - 📁 输入目录: D:\AI_GEN\ai-gen-backend\data\input
+2026-08-20 01:11:40 - main - INFO - 📁 输出目录: D:\AI_GEN\ai-gen-backend\data\output
+2026-08-20 01:11:40 - main - INFO - 📁 日志目录: D:\AI_GEN\ai-gen-backend\logs
+2026-08-20 01:11:40 - main - INFO - 🔧 调试模式: True
+2026-08-20 01:11:40 - main - INFO - 🔑 API易 Key: 已配置
+2026-08-20 01:11:40 - main - INFO - 🔑 百炼 Key: 已配置
+2026-08-20 01:11:40 - main - INFO - ============================================================
+2026-08-20 09:22:27 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 09:22:27 - main - INFO - 📁 静态文件服务: /output -> D:\sd14\AI_GEN\ai-gen-backend\data\output
+2026-08-20 09:22:27 - main - INFO - ============================================================
+2026-08-20 09:22:27 - main - INFO - 🚀 AI Generation Backend v1.0.0
+2026-08-20 09:22:27 - main - INFO - ============================================================
+2026-08-20 09:22:27 - main - INFO - 📍 配置目录: D:\sd14\AI_GEN\ai-gen-backend\config
+2026-08-20 09:22:27 - main - INFO - 📁 数据目录: D:\sd14\AI_GEN\ai-gen-backend\data
+2026-08-20 09:22:27 - main - INFO - 📁 输入目录: D:\sd14\AI_GEN\ai-gen-backend\data\input
+2026-08-20 09:22:27 - main - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output
+2026-08-20 09:22:27 - main - INFO - 📁 日志目录: D:\sd14\AI_GEN\ai-gen-backend\logs
+2026-08-20 09:22:27 - main - INFO - 🔧 调试模式: True
+2026-08-20 09:22:27 - main - INFO - 🔑 API易 Key: 已配置
+2026-08-20 09:22:27 - main - INFO - 🔑 百炼 Key: 已配置
+2026-08-20 09:22:27 - main - INFO - ============================================================
+2026-08-20 09:23:17 - dependencies - INFO - ✅ ChatService 初始化完成
+2026-08-20 09:23:17 - ai_service - INFO - 🔄 创建新的客户端: provider=yi
+2026-08-20 09:23:17 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-y12cL...5e79
+2026-08-20 09:30:04 - main - INFO - 🛑 应用正在关闭...
+2026-08-20 09:30:04 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 09:30:04 - main - INFO - 📁 静态文件服务: /output -> D:\sd14\AI_GEN\ai-gen-backend\data\output
+2026-08-20 09:30:04 - main - INFO - ============================================================
+2026-08-20 09:30:04 - main - INFO - 🚀 AI Generation Backend v1.0.0
+2026-08-20 09:30:04 - main - INFO - ============================================================
+2026-08-20 09:30:04 - main - INFO - 📍 配置目录: D:\sd14\AI_GEN\ai-gen-backend\config
+2026-08-20 09:30:04 - main - INFO - 📁 数据目录: D:\sd14\AI_GEN\ai-gen-backend\data
+2026-08-20 09:30:04 - main - INFO - 📁 输入目录: D:\sd14\AI_GEN\ai-gen-backend\data\input
+2026-08-20 09:30:04 - main - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output
+2026-08-20 09:30:04 - main - INFO - 📁 日志目录: D:\sd14\AI_GEN\ai-gen-backend\logs
+2026-08-20 09:30:04 - main - INFO - 🔧 调试模式: True
+2026-08-20 09:30:04 - main - INFO - 🔑 API易 Key: 已配置
+2026-08-20 09:30:04 - main - INFO - 🔑 百炼 Key: 已配置
+2026-08-20 09:30:04 - main - INFO - ============================================================
+2026-08-20 09:35:10 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 09:35:10 - main - INFO - 📁 静态文件服务: /output -> D:\sd14\AI_GEN\ai-gen-backend\data\output
+2026-08-20 11:07:57 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 11:07:57 - main - INFO - 📁 静态文件服务: /output -> D:\sd14\AI_GEN\ai-gen-backend\data\output
+2026-08-20 11:07:58 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 11:07:58 - main - INFO - 📁 静态文件服务: /output -> D:\sd14\AI_GEN\ai-gen-backend\data\output
+2026-08-20 11:07:58 - main - INFO - ============================================================
+2026-08-20 11:07:58 - main - INFO - 🚀 AI Generation Backend v1.0.0
+2026-08-20 11:07:58 - main - INFO - ============================================================
+2026-08-20 11:07:58 - main - INFO - 📍 配置目录: D:\sd14\AI_GEN\ai-gen-backend\config
+2026-08-20 11:07:58 - main - INFO - 📁 数据目录: D:\sd14\AI_GEN\ai-gen-backend\data
+2026-08-20 11:07:58 - main - INFO - 📁 输入目录: D:\sd14\AI_GEN\ai-gen-backend\data\input
+2026-08-20 11:07:58 - main - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output
+2026-08-20 11:07:58 - main - INFO - 📁 日志目录: D:\sd14\AI_GEN\ai-gen-backend\logs
+2026-08-20 11:07:58 - main - INFO - 🔧 调试模式: True
+2026-08-20 11:07:58 - main - INFO - 🔑 API易 Key: 已配置
+2026-08-20 11:07:58 - main - INFO - 🔑 百炼 Key: 已配置
+2026-08-20 11:07:58 - main - INFO - ============================================================
+2026-08-20 11:08:02 - dependencies - INFO - ✅ ChatService 初始化完成
+2026-08-20 11:08:02 - ai_service - INFO - 🔄 创建新的客户端: provider=yi
+2026-08-20 11:08:02 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-pYQlt...75E7
+2026-08-20 11:12:43 - main - INFO - 🛑 应用正在关闭...
+2026-08-20 11:12:47 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 11:12:47 - main - INFO - 📁 静态文件服务: /output -> D:\sd14\AI_GEN\ai-gen-backend\data\output
+2026-08-20 11:12:48 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 11:12:48 - main - INFO - 📁 静态文件服务: /output -> D:\sd14\AI_GEN\ai-gen-backend\data\output
+2026-08-20 11:12:48 - main - INFO - ============================================================
+2026-08-20 11:12:48 - main - INFO - 🚀 AI Generation Backend v1.0.0
+2026-08-20 11:12:48 - main - INFO - ============================================================
+2026-08-20 11:12:48 - main - INFO - 📍 配置目录: D:\sd14\AI_GEN\ai-gen-backend\config
+2026-08-20 11:12:48 - main - INFO - 📁 数据目录: D:\sd14\AI_GEN\ai-gen-backend\data
+2026-08-20 11:12:48 - main - INFO - 📁 输入目录: D:\sd14\AI_GEN\ai-gen-backend\data\input
+2026-08-20 11:12:48 - main - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output
+2026-08-20 11:12:48 - main - INFO - 📁 日志目录: D:\sd14\AI_GEN\ai-gen-backend\logs
+2026-08-20 11:12:48 - main - INFO - 🔧 调试模式: True
+2026-08-20 11:12:48 - main - INFO - 🔑 API易 Key: 已配置
+2026-08-20 11:12:48 - main - INFO - 🔑 百炼 Key: 已配置
+2026-08-20 11:12:48 - main - INFO - ============================================================
+2026-08-20 11:13:51 - dependencies - INFO - ✅ ImageService 初始化完成
+2026-08-20 11:13:51 - ai_service - INFO - 🔄 创建新的客户端: provider=yi
+2026-08-20 11:13:51 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-pYQlt...75E7
+2026-08-20 11:13:56 - image_service - INFO - ✅ 提示词优化完成: 帮我生成一张可爱小猫的图片... -> 一只可爱的布偶幼猫，毛茸茸的蓝眼睛，正蜷缩在一个阳光明媚的窗台上，周围散落着柔软的毛线球。画面采用柔...
+2026-08-20 11:14:01 - client_yi - INFO - ✅ 图片数据获取成功，长度: 1122852
+2026-08-20 11:14:01 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_111401
+2026-08-20 11:14:01 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_111401\generated_01.png
+2026-08-20 11:14:15 - image_service - INFO - ✅ 提示词优化完成: 帮我生成一张可爱小猫的图片... -> 一只毛茸茸的幼年英国短毛猫，有着明亮的蓝色大眼睛和粉嫩的鼻子，正趴在柔软温暖的针织毛毯上，好奇地歪着...
+2026-08-20 11:14:21 - client_yi - INFO - ✅ 图片数据获取成功，长度: 983576
+2026-08-20 11:14:21 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_111421
+2026-08-20 11:14:21 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_111421\generated_01.png
+2026-08-20 11:14:53 - dependencies - INFO - ✅ ChatService 初始化完成
+2026-08-20 11:18:59 - image_service - INFO - ✅ 提示词优化完成: 卡通风格... -> 卡通风格，色彩鲜艳明快，线条简洁流畅，角色设计充满活力与趣味性，采用扁平化或简约插画风格，背景元素生...
+2026-08-20 11:19:09 - client_yi - INFO - ✅ 图生图图片数据获取成功，长度: 907800
+2026-08-20 11:19:09 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\image_to_image\20260820_111909
+2026-08-20 11:19:09 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\image_to_image\20260820_111909\generated_01.png
+2026-08-20 11:29:29 - image_service - INFO - ✅ 提示词优化完成: 帮我生成一张女生健身图片, 卡通风格... -> 一个充满活力的卡通风格女孩正在健身房锻炼，她有着明亮的笑容和健美的身材，穿着时尚的运动装，正在专注地...
+2026-08-20 11:29:35 - client_yi - INFO - ✅ 图片数据获取成功，长度: 1005888
+2026-08-20 11:29:35 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_112935
+2026-08-20 11:29:35 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_112935\generated_01.png
+2026-08-20 11:30:14 - image_service - INFO - ✅ 提示词优化完成: 帮我生成一张女生健身图片, 卡通风格... -> 卡通风格健身女孩，活力四射，正在进行举重训练。她身穿亮粉色运动背心和黑色紧身短裤，肌肉线条流畅且富有...
+2026-08-20 11:30:20 - client_yi - INFO - ✅ 图片数据获取成功，长度: 1026492
+2026-08-20 11:30:20 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_113020
+2026-08-20 11:30:20 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_113020\generated_01.png
+2026-08-20 11:30:38 - exceptions - WARNING - 验证失败: [{'field': 'body.source_image', 'message': 'Value error, 参考图不能为空', 'type': 'value_error'}]
+2026-08-20 11:34:18 - image_service - INFO - ✅ 提示词优化完成: 帮我生成一张女电工的图片, 卡通风格... -> 一位充满活力的女电工，卡通风格，扎着马尾辫，头戴黄色安全帽，穿着蓝色工装服，腰间挂着工具包，手持螺丝...
+2026-08-20 11:34:24 - client_yi - INFO - ✅ 图片数据获取成功，长度: 1108792
+2026-08-20 11:34:24 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_113424
+2026-08-20 11:34:24 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_113424\generated_01.png
+2026-08-20 11:40:58 - image_service - INFO - ✅ 提示词优化完成: 帮我生成一张女电工的图片，高清细节，电影级布光，专业摄影构图... -> 一位专业女电工正在现代化工业环境中进行维修工作，身穿工装背心和安全帽，手持电动工具，表情专注自信。采...
+2026-08-20 11:41:04 - client_yi - INFO - ✅ 图片数据获取成功，长度: 1142556
+2026-08-20 11:41:04 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_114104
+2026-08-20 11:41:04 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_114104\generated_01.png
+2026-08-20 11:46:35 - image_service - INFO - ✅ 提示词优化完成: 帮我把这两张图融合到一起，保持风格统一，自然过渡，完整场景... -> 将两张图像无缝融合为统一完整的场景，采用一致的视觉风格与色彩调性，实现自然平滑的过渡，确保构图连贯、...
+2026-08-20 11:47:57 - client_yi - INFO - ✅ 融合图片数据获取成功，长度: 673452
+2026-08-20 11:47:57 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\fused\20260820_114757
+2026-08-20 11:47:57 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\fused\20260820_114757\fused_01.png
+2026-08-20 12:06:59 - main - INFO - 🛑 应用正在关闭...
+2026-08-20 12:07:00 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 12:07:00 - main - INFO - 📁 静态文件服务: /output -> D:\sd14\AI_GEN\ai-gen-backend\data\output
+2026-08-20 12:07:00 - main - INFO - 📁 静态文件服务: /data/input -> D:\sd14\AI_GEN\ai-gen-backend\data\input
+2026-08-20 12:07:00 - main - INFO - ============================================================
+2026-08-20 12:07:00 - main - INFO - 🚀 AI Generation Backend v1.0.0
+2026-08-20 12:07:00 - main - INFO - ============================================================
+2026-08-20 12:07:00 - main - INFO - 📍 配置目录: D:\sd14\AI_GEN\ai-gen-backend\config
+2026-08-20 12:07:00 - main - INFO - 📁 数据目录: D:\sd14\AI_GEN\ai-gen-backend\data
+2026-08-20 12:07:00 - main - INFO - 📁 输入目录: D:\sd14\AI_GEN\ai-gen-backend\data\input
+2026-08-20 12:07:00 - main - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output
+2026-08-20 12:07:00 - main - INFO - 📁 日志目录: D:\sd14\AI_GEN\ai-gen-backend\logs
+2026-08-20 12:07:00 - main - INFO - 🔧 调试模式: True
+2026-08-20 12:07:00 - main - INFO - 🔑 API易 Key: 已配置
+2026-08-20 12:07:00 - main - INFO - 🔑 百炼 Key: 已配置
+2026-08-20 12:07:00 - main - INFO - ============================================================
+2026-08-20 12:07:54 - dependencies - INFO - ✅ ImageService 初始化完成
+2026-08-20 12:07:54 - exceptions - WARNING - 验证失败: [{'field': 'body.image_paths.0', 'message': 'Input should be a valid string', 'type': 'string_type'}, {'field': 'body.image_paths.1', 'message': 'Input should be a valid string', 'type': 'string_type'}]
+2026-08-20 12:08:46 - ai_service - INFO - 🔄 创建新的客户端: provider=yi
+2026-08-20 12:08:46 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-pYQlt...75E7
+2026-08-20 12:08:54 - image_service - INFO - ✅ 提示词优化完成: 帮我生成一张德文猫的照片... -> 一只优雅的成年德文卷毛猫，全身覆盖着柔软、波浪状的短卷毛，呈现温暖的焦糖色。它正坐在铺着奶油色亚麻布...
+2026-08-20 12:08:59 - client_yi - INFO - ✅ 图片数据获取成功，长度: 981300
+2026-08-20 12:08:59 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_120859
+2026-08-20 12:08:59 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_120859\generated_01.png
+2026-08-20 12:18:31 - image_service - INFO - ✅ 提示词优化完成: 帮我生成一张徒步的图片... -> 一位背包徒步旅行者，穿着专业户外装备，在清晨的崇山峻岭间沿着蜿蜒的山径行走，阳光透过薄雾洒下，远处是...
+2026-08-20 12:18:36 - client_yi - INFO - ✅ 图片数据获取成功，长度: 1231868
+2026-08-20 12:18:36 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_121836
+2026-08-20 12:18:36 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_121836\generated_01.png
+2026-08-20 12:25:17 - image_service - INFO - ✅ 提示词优化完成: 帮我生成一张徒步的图片... -> 一位徒步者背着登山包，手持登山杖，正在一条蜿蜒的山间小径上行走。阳光透过茂密的树叶洒下斑驳光影，远处...
+2026-08-20 12:25:27 - client_yi - INFO - ✅ 图片数据获取成功，长度: 1709836
+2026-08-20 12:25:27 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_122527
+2026-08-20 12:25:27 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_122527\generated_01.png
+2026-08-20 13:56:05 - image_service - INFO - ✅ 提示词优化完成: 帮我生成一张篮球的图片, 卡通风格... -> 一个充满活力的卡通风格篮球，表面有着鲜明的橘色皮革纹理和清晰的黑色接缝线，正在空中划出一道流畅的弧线...
+2026-08-20 13:56:14 - client_yi - INFO - ✅ 图片数据获取成功，长度: 760616
+2026-08-20 13:56:14 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_135614
+2026-08-20 13:56:14 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_135614\generated_01.png
+2026-08-20 13:59:56 - image_service - INFO - ✅ 提示词优化完成: 帮我生成一张公路车的图片... -> 专业公路自行车，碳纤维车架，空气动力学设计，细窄轮胎，轻量化结构，采用鲜艳配色（红/黑或蓝/白渐变）...
+2026-08-20 14:00:06 - client_yi - INFO - ✅ 图片数据获取成功，长度: 1055980
+2026-08-20 14:00:06 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_140006
+2026-08-20 14:00:06 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\text_to_image\20260820_140006\generated_01.png
+2026-08-20 14:02:06 - image_service - INFO - ✅ 提示词优化完成: 卡通风格... -> 一个色彩鲜艳、线条流畅、充满活力的卡通场景，采用扁平化设计风格，角色拥有夸张的大眼睛和富有表现力的表...
+2026-08-20 14:02:16 - client_yi - INFO - ✅ 图生图图片数据获取成功，长度: 329928
+2026-08-20 14:02:16 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\image_to_image\20260820_140216
+2026-08-20 14:02:16 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\image_to_image\20260820_140216\generated_01.png
+2026-08-20 14:03:54 - image_service - INFO - ✅ 提示词优化完成: 帮我把这张图弄成卡通风格... -> 卡通风格插画，明亮色彩，流畅线条，夸张角色设计，扁平化或半写实卡通渲染，背景简洁或带有趣味元素，整体...
+2026-08-20 14:04:05 - client_yi - INFO - ✅ 图生图图片数据获取成功，长度: 1280940
+2026-08-20 14:04:05 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\image_to_image\20260820_140405
+2026-08-20 14:04:05 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\image_to_image\20260820_140405\generated_01.png
+2026-08-20 14:08:02 - image_service - INFO - ✅ 提示词优化完成: 卡通风格... -> 一个充满活力的卡通世界，采用明亮鲜艳的色彩和夸张的线条。角色设计风格化，拥有大眼睛和富有弹性的身体动...
+2026-08-20 14:08:12 - client_yi - INFO - ✅ 图生图图片数据获取成功，长度: 1578992
+2026-08-20 14:08:12 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\image_to_image\20260820_140812
+2026-08-20 14:08:12 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\image_to_image\20260820_140812\generated_01.png
+2026-08-20 14:11:14 - main - INFO - 🛑 应用正在关闭...
+2026-08-20 14:11:15 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 14:11:15 - main - INFO - 📁 静态文件服务: /output -> D:\sd14\AI_GEN\ai-gen-backend\data\output
+2026-08-20 14:11:15 - main - INFO - 📁 静态文件服务: /data/input -> D:\sd14\AI_GEN\ai-gen-backend\data\input
+2026-08-20 14:11:15 - main - INFO - ============================================================
+2026-08-20 14:11:15 - main - INFO - 🚀 AI Generation Backend v1.0.0
+2026-08-20 14:11:15 - main - INFO - ============================================================
+2026-08-20 14:11:15 - main - INFO - 📍 配置目录: D:\sd14\AI_GEN\ai-gen-backend\config
+2026-08-20 14:11:15 - main - INFO - 📁 数据目录: D:\sd14\AI_GEN\ai-gen-backend\data
+2026-08-20 14:11:15 - main - INFO - 📁 输入目录: D:\sd14\AI_GEN\ai-gen-backend\data\input
+2026-08-20 14:11:15 - main - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output
+2026-08-20 14:11:15 - main - INFO - 📁 日志目录: D:\sd14\AI_GEN\ai-gen-backend\logs
+2026-08-20 14:11:15 - main - INFO - 🔧 调试模式: True
+2026-08-20 14:11:15 - main - INFO - 🔑 API易 Key: 已配置
+2026-08-20 14:11:15 - main - INFO - 🔑 百炼 Key: 已配置
+2026-08-20 14:11:15 - main - INFO - ============================================================
+2026-08-20 14:11:21 - main - INFO - 🛑 应用正在关闭...
+2026-08-20 14:11:24 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 14:11:24 - main - INFO - 📁 静态文件服务: /output -> D:\sd14\AI_GEN\ai-gen-backend\data\output
+2026-08-20 14:11:24 - main - INFO - 📁 静态文件服务: /data/input -> D:\sd14\AI_GEN\ai-gen-backend\data\input
+2026-08-20 14:11:24 - exceptions - INFO - ✅ 异常处理器注册完成
+2026-08-20 14:11:24 - main - INFO - 📁 静态文件服务: /output -> D:\sd14\AI_GEN\ai-gen-backend\data\output
+2026-08-20 14:11:24 - main - INFO - 📁 静态文件服务: /data/input -> D:\sd14\AI_GEN\ai-gen-backend\data\input
+2026-08-20 14:11:24 - main - INFO - ============================================================
+2026-08-20 14:11:24 - main - INFO - 🚀 AI Generation Backend v1.0.0
+2026-08-20 14:11:24 - main - INFO - ============================================================
+2026-08-20 14:11:24 - main - INFO - 📍 配置目录: D:\sd14\AI_GEN\ai-gen-backend\config
+2026-08-20 14:11:24 - main - INFO - 📁 数据目录: D:\sd14\AI_GEN\ai-gen-backend\data
+2026-08-20 14:11:24 - main - INFO - 📁 输入目录: D:\sd14\AI_GEN\ai-gen-backend\data\input
+2026-08-20 14:11:24 - main - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output
+2026-08-20 14:11:24 - main - INFO - 📁 日志目录: D:\sd14\AI_GEN\ai-gen-backend\logs
+2026-08-20 14:11:24 - main - INFO - 🔧 调试模式: True
+2026-08-20 14:11:24 - main - INFO - 🔑 API易 Key: 已配置
+2026-08-20 14:11:24 - main - INFO - 🔑 百炼 Key: 已配置
+2026-08-20 14:11:24 - main - INFO - ============================================================
+2026-08-20 14:11:41 - dependencies - INFO - ✅ ImageService 初始化完成
+2026-08-20 14:11:41 - ai_service - INFO - 🔄 创建新的客户端: provider=yi
+2026-08-20 14:11:41 - client_yi - INFO - ✅ YIClient 初始化完成，API Key: sk-pYQlt...75E7
+2026-08-20 14:11:47 - image_service - INFO - ✅ 提示词优化完成: 卡通风格... -> 一个充满活力的卡通风格插画，采用明亮、饱和的配色方案和清晰的黑白描边。角色设计夸张有趣，拥有大头大眼...
+2026-08-20 14:11:47 - client_yi - INFO - 📸 转换路径: /data/input/1787206298_04d76678.jpg -> D:\sd14\AI_GEN\ai-gen-backend\data\input\1787206298_04d76678.jpg
+2026-08-20 14:11:47 - client_yi - INFO - 📸 读取图片成功，大小: 162036 bytes, mime: image/jpeg
+2026-08-20 14:11:47 - client_yi - INFO - 📸 发送图生图请求: model=gemini-3.1-flash-lite-image, prompt=一个充满活力的卡通风格插画，采用明亮、饱和的配色方案和清晰的黑白描边。角色设计夸张有趣，拥有大头大眼...
+2026-08-20 14:11:47 - client_yi - INFO - 📸 图片数据长度: 216048
+2026-08-20 14:11:56 - client_yi - INFO - 📸 图生图响应: {"candidates": [{"content": {"role": "model", "parts": [{"thoughtSignature": "Ev6xYwr6sWMBEU0yD9VvN5IslEKlq2exzW82LVx1mTuFA0csKzdyq5DpB3sRW+ydzsEqseP+TSbcsTVt8lN7D/Iipy8a5yP/kiBBliyY+bh8moSNUXcCUp+SVy5hF6CxOTLd8SejAVQU/oxkL+geMPN4DS+ZDIK0GWGzOPmfShwh6xY78lvhSArgRI9+y0pwg0tYclgvvJwoE/Lk9o2h1Bm7jmoQ5GDyy14VHQcgWuB1J+RlnvNlrwaNPx+QWHTTkuOvKQTsCNHdPk+rPznAdqMzJJfvlkTBq1F754WbBQRCY/f+Yfsw+k7AKUJz4rKSGvLaaTMtcHmUwp5FXHCzt51n50bMeIiiC/0iPAAspIiOIUcgCTrlnZjWwb8Z5NAiFbeIb6EHjcttRxACtDbjV5H8AbAFb2pRW8c1ok
+2026-08-20 14:11:56 - client_yi - INFO - ✅ 图生图图片数据获取成功，长度: 1191956
+2026-08-20 14:11:56 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\image_to_image\20260820_141156
+2026-08-20 14:11:56 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\image_to_image\20260820_141156\generated_01.png
+2026-08-20 14:15:28 - image_service - INFO - ✅ 提示词优化完成: 卡通风格... -> 卡通风格，色彩鲜明，线条简洁流畅，扁平化设计，充满趣味性和创意，适合儿童或轻松愉快的场景，角色表情生...
+2026-08-20 14:15:28 - client_yi - INFO - 📸 转换路径: /data/input/1787206519_38c77d4e.jpg -> D:\sd14\AI_GEN\ai-gen-backend\data\input\1787206519_38c77d4e.jpg
+2026-08-20 14:15:28 - client_yi - INFO - 📸 读取图片成功，大小: 162036 bytes, mime: image/jpeg
+2026-08-20 14:15:28 - client_yi - INFO - 📸 发送图生图请求: model=gemini-3.1-flash-lite-image, prompt=卡通风格，色彩鲜明，线条简洁流畅，扁平化设计，充满趣味性和创意，适合儿童或轻松愉快的场景，角色表情生...
+2026-08-20 14:15:28 - client_yi - INFO - 📸 图片数据长度: 216048
+2026-08-20 14:16:01 - client_yi - INFO - 📸 图生图响应: {"candidates": [{"content": {"role": "model", "parts": [{"inlineData": {"mimeType": "image/jpeg", "data": "/9j/4AAQSkZJRgABAQAAAQABAAD/6xjISlAAAQAAAAEAABi+anVtYgAAAB5qdW1kYzJwYQARABCAAACqADibcQNjMnBhAAAAGJhqdW1iAAAAR2p1bWRjMm1hABEAEIAAAKoAOJtxA3VybjpjMnBhOjU2Yjc4OGIyLTMzNjctN2M0Yy1lNDEyLTQ4ZTg0NWYxNTk5YwAAABMBanVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABLRY2JvctKEWQYqogEmGCGCWQM+MIIDOjCCAsCgAwIBAgIUAKczbAw34ANv94HsGPTaD8O03WIwCgYIKoZIzj0EAwMwUTELMAkGA1UEBhMCVVMxEzARBgNVBAoMCkdvb
+2026-08-20 14:16:01 - client_yi - INFO - ✅ 图生图图片数据获取成功，长度: 827072
+2026-08-20 14:16:01 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\image_to_image\20260820_141601
+2026-08-20 14:16:01 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\image_to_image\20260820_141601\generated_01.png
+2026-08-20 14:22:38 - image_service - INFO - ✅ 提示词优化完成: 帮我讲两张图合并... -> 将两张图像进行无缝融合与创意合成，主体元素和谐过渡，保持视觉连贯性，采用数字合成技术，光影色调统一，...
+2026-08-20 14:22:57 - client_yi - INFO - ✅ 融合图片数据获取成功，长度: 626580
+2026-08-20 14:22:57 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\fused\20260820_142257
+2026-08-20 14:22:57 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\fused\20260820_142257\fused_01.png
+2026-08-20 14:34:19 - image_service - INFO - ✅ 提示词优化完成: 复古... -> 一幅充满复古氛围的数码插画，风格灵感源自1950年代的丝网印刷和褪色海报。画面以温暖的棕褐色调和做旧...
+2026-08-20 14:34:19 - client_yi - INFO - 📸 转换路径: /data/input/1787207635_957ef9a2.jpg -> D:\sd14\AI_GEN\ai-gen-backend\data\input\1787207635_957ef9a2.jpg
+2026-08-20 14:34:19 - client_yi - INFO - 📸 读取图片成功，大小: 162036 bytes, mime: image/jpeg
+2026-08-20 14:34:19 - client_yi - INFO - 📸 发送图生图请求: model=gemini-3.1-flash-lite-image, prompt=一幅充满复古氛围的数码插画，风格灵感源自1950年代的丝网印刷和褪色海报。画面以温暖的棕褐色调和做旧...
+2026-08-20 14:34:19 - client_yi - INFO - 📸 图片数据长度: 216048
+2026-08-20 14:34:25 - client_yi - INFO - 📸 图生图响应: {"candidates": [{"content": {"role": "model", "parts": [{"thoughtSignature": "EqmqYQqlqmEBEU0yDwfeC4QGHr7DJmYsOtP7MQdzD+cVBU5GA+h/Nz24beqtviNWYIZisaSaasXD4fHrszxFLTHZpppqWMhNkAUAYTSooqRkEgoNgaRmHLvIk5kOduVzzPnYjXwa2StRm70OZAbDa724u/loWUIItDKtQQPL3QFg01SoWECnlL6w0jBk3TuFCcpQ3wxk62apN/QIHZFsRY92oEUC/JcBc75Zgy8k/ExGkgrYhQik2llSNsqbuRYI1CQ0rLzqh/VafHJc8bzA95RIzinymMkWndAtYtJKOOrW3wPW4fWq6vAfYQRI0codMfRIhTvZ7BazZ/Hg6OcvmEFJ2QZ4Y3xgkG8PBE46pxcD/4QqAoVqoqNYSjCf57WGbun3zYxRTaVDjILRODra1BmnnLyAhBmUtEuZB/
+2026-08-20 14:34:25 - client_yi - INFO - ✅ 图生图图片数据获取成功，长度: 1136676
+2026-08-20 14:34:25 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\image_to_image\20260820_143425
+2026-08-20 14:34:25 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\image_to_image\20260820_143425\generated_01.png
+2026-08-20 14:35:01 - image_service - INFO - ✅ 提示词优化完成: 将两张图片融合到一起... -> 将两张图片无缝融合，通过图层混合、渐变过渡和蒙版技术实现创意合成，确保构图和谐、色调统一，创造出一幅...
+2026-08-20 14:35:17 - client_yi - INFO - ✅ 融合图片数据获取成功，长度: 169204
+2026-08-20 14:35:17 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\fused\20260820_143517
+2026-08-20 14:35:17 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\fused\20260820_143517\fused_01.png
+2026-08-20 14:35:38 - image_service - INFO - ✅ 提示词优化完成: 复古... -> 复古风格，怀旧色调，柔和颗粒质感，老式胶片相机拍摄效果，泛黄照片，经典构图，温暖怀旧氛围，复古美学，...
+2026-08-20 14:35:38 - client_yi - INFO - 📸 转换路径: /data/input/1787207635_957ef9a2.jpg -> D:\sd14\AI_GEN\ai-gen-backend\data\input\1787207635_957ef9a2.jpg
+2026-08-20 14:35:38 - client_yi - INFO - 📸 读取图片成功，大小: 162036 bytes, mime: image/jpeg
+2026-08-20 14:35:38 - client_yi - INFO - 📸 发送图生图请求: model=gemini-3.1-flash-lite-image, prompt=复古风格，怀旧色调，柔和颗粒质感，老式胶片相机拍摄效果，泛黄照片，经典构图，温暖怀旧氛围，复古美学，...
+2026-08-20 14:35:38 - client_yi - INFO - 📸 图片数据长度: 216048
+2026-08-20 14:35:46 - client_yi - INFO - 📸 图生图响应: {"candidates": [{"content": {"role": "model", "parts": [{"thoughtSignature": "EuKAVgregFYBEU0yD1ZNynSpLKbyePqg144v60kQGGLs+n+MZwBLCqXw0JDYsbadgC3pFCLuLKXthxL+FpduCsqadyMKPnFt+1olPj7ZMLZkkr67OVQ0amwhkzq/zwS8zt8yLI2A6nWuml99LKRSTNWgkGFYa/NxELZ72RMAudx+2DRCFwPQzm09xRl8UsABOOVxjoEDViOgcpRGocybPsnATrLHiIeFbk8OKKSYIjnCYxvigCk6L305AGMiytmx/iJl+65+aHs99gC1ZqRlplznv3IEeyoQ4g+EHCC9/38/XW+A8OYLLTKnm8W1sUENQohum0vuQ5MR8r+7XAzf7kP1AbNv1o0JxvFQQPNJCqBNgPqCQWa9Dhd8LjhvqGqVVJju5acW29vle5VOb4dQ3TssnMiiYU8felbFb9
+2026-08-20 14:35:46 - client_yi - INFO - ✅ 图生图图片数据获取成功，长度: 960504
+2026-08-20 14:35:46 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\image_to_image\20260820_143546
+2026-08-20 14:35:46 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\image_to_image\20260820_143546\generated_01.png
+2026-08-20 14:36:31 - image_service - INFO - ✅ 提示词优化完成: 复古... -> 复古怀旧风格插画，采用柔和褪色调色板，带有轻微颗粒感和纸张纹理，呈现20世纪中叶的经典美学，细腻的细...
+2026-08-20 14:36:31 - client_yi - INFO - 📸 转换路径: /data/input/1787207635_957ef9a2.jpg -> D:\sd14\AI_GEN\ai-gen-backend\data\input\1787207635_957ef9a2.jpg
+2026-08-20 14:36:31 - client_yi - INFO - 📸 读取图片成功，大小: 162036 bytes, mime: image/jpeg
+2026-08-20 14:36:31 - client_yi - INFO - 📸 发送图生图请求: model=gemini-3.1-flash-lite-image, prompt=复古怀旧风格插画，采用柔和褪色调色板，带有轻微颗粒感和纸张纹理，呈现20世纪中叶的经典美学，细腻的细...
+2026-08-20 14:36:31 - client_yi - INFO - 📸 图片数据长度: 216048
+2026-08-20 14:36:39 - client_yi - INFO - 📸 图生图响应: {"candidates": [{"content": {"role": "model", "parts": [{"thoughtSignature": "EqfoWgqj6FoBEU0yD2vnzKN95U9tHKzR5i7ucnwoT3EGzegfIhdW8pZJ6NgcHV2Q3w8sSL3C7t4iy8nUDC5+2jyabro9nusfHyTLk6W2illhG0KT10syvvgoyZt50aNjdIprjmM4lXJMHoGf2btwm8oeRdo0jUxs50MlcnZ3VnUd1e9PR1OmMNOjFndJTKvpPr+Q6/s9bRpMic3MkJCLkMWiuMzDE34vJUentquuBH5VDyxq6lJnhExhIu9OjYsyWZ4BmGHtey544hxwDsc7/1jRvWStznSD74Hc6VK1tYjdiGDdo2Q2kC3J8DJRIPL+fEImQ4efSXMTubDXYglD9WiTnwcgMqZ1rw3YWvLCx0vV1B/eeGm9lKk2nLSxz8i2ITuQR/HvZSFS8A+rn+rftjIRfLjDR4aPNexzq9
+2026-08-20 14:36:40 - client_yi - INFO - ✅ 图生图图片数据获取成功，长度: 1044404
+2026-08-20 14:36:40 - image_service - INFO - 📁 输出目录: D:\sd14\AI_GEN\ai-gen-backend\data\output\image_to_image\20260820_143640
+2026-08-20 14:36:40 - image_service - INFO - ✅ 图片已保存: D:\sd14\AI_GEN\ai-gen-backend\data\output\image_to_image\20260820_143640\generated_01.png
+2026-08-20 14:37:02 - dependencies - INFO - ✅ ChatService 初始化完成
