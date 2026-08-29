@@ -1,7 +1,7 @@
 import uuid
 
-from app.agent.prompts.multi_chat_prompts import multi_chat_prompt
-from app.agent.model.qwen import qwen_llm
+from app.code_agent.prompts.multi_chat_prompts import multi_chat_prompt
+from app.code_agent.model.qwen import qwen_llm
 
 from langchain_core.output_parsers import StrOutputParser
 from langchain_community.chat_message_histories import FileChatMessageHistory
@@ -18,7 +18,7 @@ def get_session_history(session_id):
     # return store[session_id]
     return FileChatMessageHistory(f'{session_id}.json')
 
-file_toolkit=FileManagementToolkit(root_dir='D:\sd14\\ai-agent\\temp')
+file_toolkit=FileManagementToolkit(root_dir='/temp')
 
 file_tools=file_toolkit.get_tools()
 

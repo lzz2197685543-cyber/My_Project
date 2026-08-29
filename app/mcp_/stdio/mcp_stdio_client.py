@@ -31,7 +31,7 @@ async def create_mcp_stdio_client():
     # 这一步启动了服务器，我们不需要手动启动了
     server_params = StdioServerParameters(
         command='python',
-        args=['D:/sd14/ai-agent/app/mcp_/stdio/mcp_stdio_server.py']
+        args=['D:/sd14/ai-code_agent/app/mcp_/stdio/mcp_stdio_server.py']
     )
 
     try:

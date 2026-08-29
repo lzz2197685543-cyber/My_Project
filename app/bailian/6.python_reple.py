@@ -76,7 +76,7 @@ prompt = prompt_template.format(
     请创建一个企业官网的HTML文件，具体要求如下：
 
     ## 文件信息
-    - 文件路径：D:/sd14/ai-agent/temp/index.html
+    - 文件路径：D:/sd14/ai-code_agent/temp/index.html
     - 文件编码：UTF-8
 
     ## 网站内容要求
@@ -97,7 +97,7 @@ prompt = prompt_template.format(
     - 包含字体图标（使用Font Awesome CDN）
 
     ## 执行步骤
-    1. 先检查 D:/sd14/ai-agent/temp 目录是否存在，不存在则创建
+    1. 先检查 D:/sd14/ai-code_agent/temp 目录是否存在，不存在则创建
     2. 编写完整的HTML代码
     3. 写入文件并确认成功
     4. 返回文件路径和页面功能说明
