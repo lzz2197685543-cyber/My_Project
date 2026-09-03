@@ -29,6 +29,7 @@ qwen_llm = ChatOpenAI(
 )
 
 def create_agent():
+    # 我们这里使用的Docker容器内的redis不是本地的，所以本地的关掉或者用不同的端口号
     with RedisSaver.from_conn_string('redis://localhost:6379/0') as memory:
         memory.setup()
 

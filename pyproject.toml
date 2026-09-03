@@ -19,6 +19,7 @@ dependencies = [
     "openai>=2.50.0",
     "pydantic>=2.13.4",
     "python-dotenv>=1.2.2",
+    "langgraph-checkpoint-mongodb>=0.2.2",
 ]
 [[tool.uv.index]]
 url = "https://mirrors.aliyun.com/pypi/simple/"
