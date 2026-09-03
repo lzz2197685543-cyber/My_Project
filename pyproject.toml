@@ -12,6 +12,8 @@ dependencies = [
     "langchain-openai>=0.3.35",
     "langgraph>=1.0.1",
     "langgraph-checkpoint-redis>=0.3.6",
+    "redis>=5.0.0",
+    "redisvl>=0.15.0",
     "mcp==1.9.0",
     "ollama==0.3.3",
     "openai>=2.50.0",
