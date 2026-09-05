@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codex 介绍</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        h2 {
+            color: #34495e;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        ul {
+            margin-bottom: 15px;
+        }
+        .highlight {
+            background-color: #ecf0f1;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Codex 简介</h1>
+        
+        <p><strong>Codex</strong> 是由 OpenAI 开发的一个基于大型语言模型（LLM）的编程辅助工具，专为理解与生成代码而设计。它是 GPT 系列模型的衍生版本，针对代码任务进行了专门训练和优化。</p>
+        
+        <h2>主要特性</h2>
+        <ul>
+            <li><strong>多语言支持</strong>：支持 Python、JavaScript、TypeScript、Go、Rust、C++、Java 等数十种主流编程语言。</li>
+            <li><strong>代码补全</strong>：根据上下文自动建议函数、变量名、语法结构等，提升编码效率。</li>
+            <li><strong>自然语言转代码</strong>：可将英文或中文描述（如“写一个快速排序函数”）直接转化为可运行代码。</li>
+            <li><strong>代码解释与重构</strong>：能解读复杂代码逻辑，并提供简化、注释、性能优化等建议。</li>
+            <li><strong>集成开发环境（IDE）插件</strong>：已集成于 GitHub Copilot（底层即 Codex），支持 VS Code、JetBrains 等主流编辑器。</li>
+        </ul>
+        
+        <h2>技术背景</h2>
+        <p>Codex 基于 <span class="highlight">GPT-3</span> 架构，但在海量开源代码（如 GitHub 公共仓库）上进行了专项微调（fine-tuning）。其训练数据涵盖超过 <span class="highlight">159GB 的源代码</span>，使其对编程范式、库 API 和工程实践具备深度理解能力。</p>
+        
+        <h2>注意事项</h2>
+        <p>⚠️ Codex 已于 2023 年逐步被更先进的模型（如 <span class="highlight">GPT-4 Turbo</span> 及 <span class="highlight">o1 / o3 系列推理模型</span>）替代。OpenAI 官方不再维护 Codex API；当前推荐使用 <a href="https://platform.openai.com/docs/models" target="_blank">OpenAI Model Catalog</a> 中的最新代码模型。</p>
+        
+        <footer>
+            <p>© 2024 AI Agent · 本页面仅供学习与参考</p>
+        </footer>
+    </div>
+</body>
+</html>

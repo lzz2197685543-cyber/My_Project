@@ -125,7 +125,7 @@ class CheckpointSaver(BaseCheckpointSaver[str]):
             json.dump(checkpoint_data,f,indent=2,ensure_ascii=False)
 
         # 4.返回一个值
-        print('put')
+        # print('put')
         return config
 
     def put_writes(
@@ -144,11 +144,35 @@ class CheckpointSaver(BaseCheckpointSaver[str]):
                     task_path: Path of the task creating the writes.
         """
 
-        print('put_writes')
+        print('')
+
+
+    # 实现异步的这get_put/put_writes/put方法
+    async def aget_tuple(self, config: RunnableConfig) -> CheckpointTuple | None:
+        """异步获取 checkpoint - 直接调用同步方法"""
+        return self.get_tuple(config)
+
+    async def aput(self, config: RunnableConfig,
+                   checkpoint: CheckpointTuple,
+                   metadata: CheckpointMetadata,
+                   new_version: ChannelVersions,
+                   ) -> RunnableConfig:
+        """异步存储 checkpoint - 直接调用同步方法"""
+        return self.put(config, checkpoint, metadata, new_version)
+
+    async def aput_writes(
+            self,
+            config: RunnableConfig,
+            writes: Sequence[tuple[str, Any]],
+            task_id: str,
+            task_path: str = "",
+    ) -> None:
+        """异步存储中间写入 - 直接调用同步方法"""
+        return self.put_writes(config, writes, task_id, task_path)
 
 
 if __name__ == '__main__':
-    memory = CheckpointSaver()
+    memory = CheckpointSaver(base_dir='D:\\sd14\\ai-agent\\temp')
 
     agent = create_react_agent(
         model=qwen_llm,
