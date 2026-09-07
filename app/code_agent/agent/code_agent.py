@@ -1,11 +1,13 @@
 import time
-from langchain_core.messages import AIMessage, ToolMessage
+from langchain_core.messages import AIMessage, ToolMessage, SystemMessage
+from langchain_core.prompts import PromptTemplate
 from langgraph.prebuilt import create_react_agent
 from langchain_core.runnables import RunnableConfig
 from app.code_agent.model.qwen import qwen_llm
 from app.code_agent.tools.file_tools import file_tools
 from app.code_agent.tools.file_saver import CheckpointSaver
 from app.code_agent.tools.shell_tools import get_stdio_shell_tools
+from app.code_agent.tools.powershell_tools import get_stdio_powershell_tools
 import asyncio
 from colorama import init, Fore, Style
 
@@ -48,17 +50,39 @@ def print_tool_result(name, content, duration):
 
 
 async def run_agent():
-    memory = CheckpointSaver(base_dir='D:\\sd14\\ai-agent\\temp\\checkpoint')
-    shell_tools = await get_stdio_shell_tools()
-    tools = file_tools + shell_tools
+    memory = CheckpointSaver(base_dir='E:\\Ai_Agent\\temp\\checkpoint')
+    # shell_tools = await get_stdio_shell_tools()
+    powershell_tools = await get_stdio_powershell_tools()
+    tools = file_tools + powershell_tools
+
+    # 方案二：提供一个RAG工具，让智能体通过工具查询知识
+
+    prompt=PromptTemplate.from_template(template="""
+    # 角色
+    你是一位优秀的工程师，你的名字叫做{name}
+    
+    # 规范
+    ## 如何使用终端工具执行Shell命令步骤
+    - 步骤一：调用关闭终端工具
+    - 步骤二：打开心的终端
+    - 步骤三：向终端输入命令
+    """)
+
+    # 🔍 添加调试：打印所有工具名称
+    print("\n" + "=" * 50)
+    print("已加载的工具列表:")
+    for tool in tools:
+        print(f"  - {tool.name}: {tool.description[:50]}...")
+    print("=" * 50 + "\n")
 
     agent = create_react_agent(
         model=qwen_llm,
         tools=tools,
         checkpointer=memory,
         debug=False,
+        prompt=SystemMessage(content=prompt.format(name='柠檬robot')),
     )
-    config = RunnableConfig(configurable={'thread_id': 3})
+    config = RunnableConfig(configurable={'thread_id': 1})
 
     while True:
         user_input = input(f"\n{C['ai']}你: ")
@@ -69,6 +93,9 @@ async def run_agent():
 
         iteration_count = 0
         last_tool_time = time.time()
+
+        # 方案一：从RAG阿里云百炼知识库中读取知识，并拼接到提示词中
+        
 
         async for chunk in agent.astream(input={'messages': user_input}, config=config):
             iteration_count += 1
