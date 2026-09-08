@@ -4,8 +4,8 @@ async def get_stdio_shell_tools():
     params={
         'command':'python',
         'args':[
-            # "D:\\sd14\\ai-agent\\app\\code_agent\\mcp\\shell_tools.py"
-            "E:\Ai_Agent\\app\\code_agent\\mcp\\shell_tools.py"
+            "D:\\sd14\\ai-agent\\app\\code_agent\\mcp\\shell_tools.py"
+            # "E:\Ai_Agent\\app\\code_agent\\mcp\\shell_tools.py"
         ]
     }
 

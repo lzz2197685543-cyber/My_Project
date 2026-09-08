@@ -4,9 +4,11 @@ from langchain_core.prompts import PromptTemplate
 from langgraph.prebuilt import create_react_agent
 from langchain_core.runnables import RunnableConfig
 from app.code_agent.model.qwen import qwen_llm
+from app.code_agent.rag.rag import query_rag_from_bailian
 from app.code_agent.tools.file_tools import file_tools
 from app.code_agent.tools.file_saver import CheckpointSaver
 from app.code_agent.tools.shell_tools import get_stdio_shell_tools
+from app.code_agent.tools.rag_tools import get_rag_tools
 from app.code_agent.tools.powershell_tools import get_stdio_powershell_tools
 import asyncio
 from colorama import init, Fore, Style
@@ -50,22 +52,22 @@ def print_tool_result(name, content, duration):
 
 
 async def run_agent():
-    memory = CheckpointSaver(base_dir='E:\\Ai_Agent\\temp\\checkpoint')
+    memory = CheckpointSaver(base_dir='D:\\sd14\\ai-agent\\temp\\checkpoint')
     # shell_tools = await get_stdio_shell_tools()
     powershell_tools = await get_stdio_powershell_tools()
-    tools = file_tools + powershell_tools
+
 
     # 方案二：提供一个RAG工具，让智能体通过工具查询知识
+    rag_tools = await get_rag_tools()
+    tools = file_tools + powershell_tools + rag_tools
 
     prompt=PromptTemplate.from_template(template="""
     # 角色
     你是一位优秀的工程师，你的名字叫做{name}
+
+    # 要求
+    执行任务之前先使用 query_rag 工具查询知识库，根据知识库中的知识执行任务
     
-    # 规范
-    ## 如何使用终端工具执行Shell命令步骤
-    - 步骤一：调用关闭终端工具
-    - 步骤二：打开心的终端
-    - 步骤三：向终端输入命令
     """)
 
     # 🔍 添加调试：打印所有工具名称
@@ -95,7 +97,14 @@ async def run_agent():
         last_tool_time = time.time()
 
         # 方案一：从RAG阿里云百炼知识库中读取知识，并拼接到提示词中
-        
+        # rag = query_rag_from_bailian(user_input)
+        # prompt = f"""
+        # # 相关知识
+        # {rag}
+        #
+        # # 用户问题
+        # {user_input}
+        # """
 
         async for chunk in agent.astream(input={'messages': user_input}, config=config):
             iteration_count += 1
