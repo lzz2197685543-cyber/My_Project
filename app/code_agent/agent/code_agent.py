@@ -56,18 +56,21 @@ async def run_agent():
     # shell_tools = await get_stdio_shell_tools()
     powershell_tools = await get_stdio_powershell_tools()
 
-
     # 方案二：提供一个RAG工具，让智能体通过工具查询知识
-    rag_tools = await get_rag_tools()
-    tools = file_tools + powershell_tools + rag_tools
+    # rag_tools = await get_rag_tools()
+    tools = file_tools + powershell_tools
 
-    prompt=PromptTemplate.from_template(template="""
+    prompt = PromptTemplate.from_template(template="""
     # 角色
-    你是一位优秀的工程师，你的名字叫做{name}
-
-    # 要求
-    执行任务之前先使用 query_rag 工具查询知识库，根据知识库中的知识执行任务
+    你是一名优秀的工程师，你的名字叫做{name}
     
+    # 规范
+    ## 使用终端工具执行Shell命令的步骤
+    - 步骤1：调用*关闭终端*工具 关闭所有终端
+    - 步骤2：打开一个新的终端，调用*打开终端*工具 
+    - 步骤3：向终端输入命令，调用*允许终端脚本*工具
+    - 步骤4：查看终端命令执行结果，调用*获取终端文本*工具
+
     """)
 
     # 🔍 添加调试：打印所有工具名称
@@ -84,7 +87,7 @@ async def run_agent():
         debug=False,
         prompt=SystemMessage(content=prompt.format(name='柠檬robot')),
     )
-    config = RunnableConfig(configurable={'thread_id': 1})
+    config = RunnableConfig(configurable={'thread_id': 1},recursion_limit=100)
 
     while True:
         user_input = input(f"\n{C['ai']}你: ")

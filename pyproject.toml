@@ -25,6 +25,7 @@ dependencies = [
     "alibabacloud-bailian20231229==1.8.2",
     "dashscope>=1.27.4",
     "pywin32>=312",
+    "pexpect>=4.9.0",
 ]
 [[tool.uv.index]]
 url = "https://mirrors.aliyun.com/pypi/simple/"

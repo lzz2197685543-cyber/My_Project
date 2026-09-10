@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>运动解剖学 - 人体运动科学指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: #ecf0f1;
+        }
+
+        /* ===== 导航栏 ===== */
+        nav {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        /* ===== Hero ===== */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #3498db 0%, #2ecc71 50%, #1abc9c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><circle cx="200" cy="200" r="150" fill="rgba(255,255,255,0.05)"/><circle cx="1000" cy="600" r="200" fill="rgba(255,255,255,0.05)"/><circle cx="600" cy="400" r="100" fill="rgba(255,255,255,0.03)"/></svg>');
+            background-size: cover;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero p {
+            font-size: 1.4em;
+            opacity: 0.95;
+            margin-bottom: 40px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 15px 50px;
+            background: white;
+            color: #3498db;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ===== 通用 Section ===== */
+        .section {
+            padding: 80px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5em;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .section-title p {
+            font-size: 1.2em;
+            color: #7f8c8d;
+        }
+
+        .title-line {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        /* ===== 解剖学术语 ===== */
+        .terms-bg {
+            background: white;
+        }
+
+        .terms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .term-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s;
+            border-left: 4px solid #3498db;
+        }
+
+        .term-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.15);
+        }
+
+        .term-card h3 {
+            color: #3498db;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .term-card .english {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .term-card p {
+            color: #2c3e50;
+            line-height: 1.7;
+        }
+
+        /* ===== 骨骼系统 ===== */
+        .skeleton-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .skeleton-svg {
+            text-align: center;
+        }
+
+        .skeleton-info h3 {
+            color: #3498db;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .bone-list {
+            list-style: none;
+        }
+
+        .bone-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid #ecf0f1;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .bone-list li:last-child {
+            border-bottom: none;
+        }
+
+        .bone-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* ===== 肌肉群 ===== */
+        .muscles-bg {
+            background: white;
+        }
+
+        .muscle-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 12px 30px;
+            background: #ecf0f1;
+            border: none;
+            border-radius: 25px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #2c3e50;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            color: white;
+            box-shadow: 0 5px 20px rgba(52, 152, 219, 0.3);
+        }
+
+        .tab-btn:hover:not(.active) {
+            background: #d5dbdb;
+        }
+
+        .muscle-content {
+            display: none;
+        }
+
+        .muscle-content.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .muscle-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .muscle-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .muscle-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            transform: scaleY(0);
+            transition: transform 0.3s;
+        }
+
+        .muscle-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .muscle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .muscle-card h4 {
+            color: #3498db;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+
+        .muscle-card .latin {
+            color: #7f8c8d;
+            font-size: 0.85em;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .muscle-card p {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .exercise-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .exercise-tag {
+            background: rgba(52, 152, 219, 0.1);
+            color: #3498db;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        /* ===== 关节运动 ===== */
+        .joints-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .joint-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .joint-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(52, 152, 219, 0.15);
+        }
+
+        .joint-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2.5em;
+        }
+
+        .joint-card h3 {
+            color: #3498db;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .joint-card .movements {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .movement-tag {
+            background: #ecf0f1;
+            color: #2c3e50;
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-size: 0.9em;
+        }
+
+        /* ===== 运动平面 ===== */
+        .planes-bg {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+        }
+
+        .planes-bg .section-title h2 {
+            color: white;
+        }
+
+        .planes-bg .section-title p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .planes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .plane-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 35px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .plane-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .plane-card h3 {
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            color: #2ecc71;
+        }
+
+        .plane-card .axis {
+            color: #3498db;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .plane-card ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .plane-card li {
+            padding: 8px 0;
+            color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .plane-card li::before {
+            content: '→';
+            color: #2ecc71;
+            font-weight: bold;
+        }
+
+        /* ===== 动作分析 ===== */
+        .movement-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .movement-table th {
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            color: white;
+            padding: 18px 15px;
+            text-align: left;
+            font-size: 1em;
+        }
+
+        .movement-table td {
+            padding: 18px 15px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .movement-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .movement-table tr:hover td {
+            background: #f8f9fa;
+        }
+
+        .movement-name {
+            font-weight: 700;
+            color: #3498db;
+        }
+
+        /* ===== 互动肌肉图 ===== */
+        .interactive-bg {
+            background: white;
+        }
+
+        .body-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .body-svg {
+            text-align: center;
+            position: sticky;
+            top: 100px;
+        }
+
+        .muscle-info-panel {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 20px;
+            padding: 40px;
+            min-height: 400px;
+        }
+
+        .muscle-info-panel h3 {
+            color: #3498db;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .muscle-info-panel .latin-name {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .info-section {
+            margin-bottom: 25px;
+        }
+
+        .info-section h4 {
+            color: #2ecc71;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .info-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-section li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .info-section li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+
+        footer p {
+            opacity: 0.7;
+        }
+
+        /* ===== 响应式 ===== */
+        @media (max-width: 968px) {
+            .skeleton-container,
+            .body-container {
+                grid-template-columns: 1fr;
+            }
+
+            .body-svg {
+                position: static;
+            }
+
+            .hero h1 { font-size: 2.5em; }
+            .hero p { font-size: 1.1em; }
+            .section { padding: 50px 20px; }
+            .section-title h2 { font-size: 2em; }
+            nav { padding: 10px 20px; }
+            .nav-links { gap: 15px; font-size: 0.9em; }
+        }
+
+        /* ===== SVG 样式 ===== */
+        .muscle-highlight {
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .muscle-highlight:hover {
+            fill: #3498db;
+            filter: drop-shadow(0 0 10px rgba(52, 152, 219, 0.5));
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <nav>
+        <div class="logo">🦴 运动解剖学</div>
+        <ul class="nav-links">
+            <li><a href="#terms">解剖术语</a></li>
+            <li><a href="#skeleton">骨骼系统</a></li>
+            <li><a href="#muscles">肌肉群</a></li>
+            <li><a href="#joints">关节运动</a></li>
+            <li><a href="#planes">运动平面</a></li>
+            <li><a href="#interactive">互动探索</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>🏛️ 运动解剖学</h1>
+            <p>深入了解人体结构与运动机制，掌握科学训练的理论基础</p>
+            <a href="#terms" class="cta-btn">开始学习 →</a>
+        </div>
+    </section>
+
+    <!-- 解剖学术语 -->
+    <section class="terms-bg" id="terms">
+        <div class="section">
+            <div class="section-title">
+                <h2>解剖学方位术语</h2>
+                <div class="title-line"></div>
+                <p>理解这些基础术语是学习运动解剖学的第一步</p>
+            </div>
+            <div class="terms-grid">
+                <div class="term-card">
+                    <h3>前侧 / 腹侧</h3>
+                    <div class="english">Anterior / Ventral</div>
+                    <p>指身体或器官的前面。例如：胸大肌位于胸部前侧。</p>
+                </div>
+                <div class="term-card">
+                    <h3>后侧 / 背侧</h3>
+                    <div class="english">Posterior / Dorsal</div>
+                    <p>指身体或器官的后面。例如：背阔肌位于背部后侧。</p>
+                </div>
+                <div class="term-card">
+                    <h3>内侧</h3>
+                    <div class="english">Medial</div>
+                    <p>靠近身体正中面或肢体近端。例如：大腿内侧肌群。</p>
+                </div>
+                <div class="term-card">
+                    <h3>外侧</h3>
+                    <div class="english">Lateral</div>
+                    <p>远离身体正中面或肢体远端。例如：三角肌外侧头。</p>
+                </div>
+                <div class="term-card">
+                    <h3>近端</h3>
+                    <div class="english">Proximal</div>
+                    <p>靠近躯干或肢体附着点。例如：肱二头肌近端附着于肩胛骨。</p>
+                </div>
+                <div class="term-card">
+                    <h3>远端</h3>
+                    <div class="english">Distal</div>
+                    <p>远离躯干或肢体附着点。例如：肱二头肌远端附着于桡骨。</p>
+                </div>
+                <div class="term-card">
+                    <h3>浅层</h3>
+                    <div class="english">Superficial</div>
+                    <p>靠近体表。例如：腹直肌位于腹壁浅层。</p>
+                </div>
+                <div class="term-card">
+                    <h3>深层</h3>
+                    <div class="english">Deep</div>
+                    <p>远离体表，位于浅层之下。例如：腹横肌位于腹直肌深层。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 骨骼系统 -->
+    <div class="section" id="skeleton">
+        <div class="section-title">
+            <h2>人体骨骼系统</h2>
+            <div class="title-line"></div>
+            <p>成人人体共有206块骨骼，构成身体的支架</p>
+        </div>
+        <div class="skeleton-container">
+            <div class="skeleton-svg">
+                <svg width="300" height="500" viewBox="0 0 300 500">
+                    <!-- 简化的人体骨骼图 -->
+                    <ellipse cx="150" cy="60" rx="35" ry="45" fill="#ecf0f1" stroke="#3498db" stroke-width="2"/>
+                    <rect x="140" y="105" width="20" height="30" fill="#ecf0f1" stroke="#3498db" stroke-width="2"/>
+                    <rect x="120" y="135" width="60" height="80" rx="10" fill="#ecf0f1" stroke="#3498db" stroke-width="2"/>
+                    <rect x="130" y="215" width="40" height="50" fill="#ecf0f1" stroke="#3498db" stroke-width="2"/>
+                    <line x1="120" y1="150" x2="80" y2="220" stroke="#3498db" stroke-width="8" stroke-linecap="round"/>
+                    <line x1="180" y1="150" x2="220" y2="220" stroke="#3498db" stroke-width="8" stroke-linecap="round"/>
+                    <line x1="80" y1="220" x2="70" y2="280" stroke="#3498db" stroke-width="6" stroke-linecap="round"/>
+                    <line x1="220" y1="220" x2="230" y2="280" stroke="#3498db" stroke-width="6" stroke-linecap="round"/>
+                    <line x1="140" y1="265" x2="130" y2="380" stroke="#3498db" stroke-width="10" stroke-linecap="round"/>
+                    <line x1="160" y1="265" x2="170" y2="380" stroke="#3498db" stroke-width="10" stroke-linecap="round"/>
+                    <line x1="130" y1="380" x2="125" y2="450" stroke="#3498db" stroke-width="8" stroke-linecap="round"/>
+                    <line x1="170" y1="380" x2="175" y2="450" stroke="#3498db" stroke-width="8" stroke-linecap="round"/>
+                    <text x="150" y="490" text-anchor="middle" fill="#7f8c8d" font-size="14">人体骨骼结构</text>
+                </svg>
+            </div>
+            <div class="skeleton-info">
+                <h3>主要骨骼分区</h3>
+                <ul class="bone-list">
+                    <li>
+                        <div class="bone-icon">头</div>
+                        <div>
+                            <strong>颅骨</strong> - 保护大脑，由22块骨骼组成
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bone-icon">脊</div>
+                        <div>
+                            <strong>脊柱</strong> - 33节椎骨，支撑身体保护脊髓
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bone-icon">胸</div>
+                        <div>
+                            <strong>胸廓</strong> - 肋骨和胸骨，保护心肺器官
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bone-icon">上</div>
+                        <div>
+                            <strong>上肢骨</strong> - 肱骨、桡骨、尺骨、手骨
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bone-icon">下</div>
+                        <div>
+                            <strong>下肢骨</strong> - 股骨、胫骨、腓骨、足骨
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bone-icon">盆</div>
+                        <div>
+                            <strong>骨盆</strong> - 髋骨、骶骨、尾骨，连接躯干和下肢
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 肌肉群 -->
+    <section class="muscles-bg" id="muscles">
+        <div class="section">
+            <div class="section-title">
+                <h2>人体主要肌肉群</h2>
+                <div class="title-line"></div>
+                <p>人体有超过600块肌肉，分为上肢、下肢、躯干三大区域</p>
+            </div>
+            
+            <div class="muscle-tabs">
+                <button class="tab-btn active" onclick="switchTab('upper')">上肢肌肉</button>
+                <button class="tab-btn" onclick="switchTab('lower')">下肢肌肉</button>
+                <button class="tab-btn" onclick="switchTab('trunk')">躯干肌肉</button>
+            </div>
+
+            <div id="upper" class="muscle-content active">
+                <div class="muscle-grid">
+                    <div class="muscle-card">
+                        <h4>胸大肌</h4>
+                        <div class="latin">Pectoralis Major</div>
+                        <p>位于胸部前侧的大块肌肉，负责肩关节内收、内旋和屈曲。是推类动作的主要发力肌群。</p>
+                        <div class="exercise-tags">
+                            <span class="exercise-tag">卧推</span>
+                            <span class="exercise-tag">俯卧撑</span>
+                            <span class="exercise-tag">飞鸟</span>
+                        </div>
+                    </div>
+                    <div class="muscle-card">
+                        <h4>背阔肌</h4>
+                        <div class="latin">Latissimus Dorsi</div>
+                        <p>背部最大的肌肉，呈三角形，负责肩关节内收、伸展和内旋。是拉类动作的主要肌群。</p>
+                        <div class="exercise-tags">
+                            <span class="exercise-tag">引体向上</span>
+                            <span class="exercise-tag">划船</span>
+                            <span class="exercise-tag">下拉</span>
+                        </div>
+                    </div>
+                    <div class="muscle-card">
+                        <h4>三角肌</h4>
+                        <div class="latin">Deltoid</div>
+                        <p>肩部肌肉，分前、中、后三束，负责肩关节的屈曲、外展和伸展。塑造肩部轮廓。</p>
+                        <div class="exercise-tags">
+                            <span class="exercise-tag">推举</span>
+                            <span class="exercise-tag">侧平举</span>
+                            <span class="exercise-tag">前平举</span>
+                        </div>
+                    </div>
+                    <div class="muscle-card">
+                        <h4>肱二头肌</h4>
+                        <div class="latin">Biceps Brachii</div>
+                        <p>上臂前侧肌肉，有两个头，负责肘关节屈曲和前臂旋后。是经典的弯举目标肌群。</p>
+                        <div class="exercise-tags">
+                            <span class="exercise-tag">弯举</span>
+                            <span class="exercise-tag">锤式弯举</span>
+                            <span class="exercise-tag">引体向上</span>
+                        </div>
+                    </div>
+                    <div class="muscle-card">
+                        <h4>肱三头肌</h4>
+                        <div class="latin">Triceps Brachii</div>
+                        <p>上臂后侧肌肉，有三个头，负责肘关节伸展。体积大于肱二头肌，占上臂2/3。</p>
+                        <div class="exercise-tags">
+                            <span class="exercise-tag">臂屈伸</span>
+                            <span class="exercise-tag">窄距卧推</span>
+                            <span class="exercise-tag">下压</span>
+                        </div>
+                    </div>
+                    <div class="muscle-card">
+                        <h4>斜方肌</h4>
+                        <div class="latin">Trapezius</div>
+                        <p>背部上方的菱形肌肉，分上、中、下三束，负责肩胛骨的运动和稳定。</p>
+                        <div class="exercise-tags">
+                            <span class="exercise-tag">耸肩</span>
+                            <span class="exercise-tag">划船</span>
+                            <span class="exercise-tag">硬拉</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="lower" class="muscle-content">
+                <div class="muscle-grid">
+                    <div class="muscle-card">
+                        <h4>股四头肌</h4>
+                        <div class="latin">Quadriceps Femoris</div>
+                        <p>大腿前侧肌群，由四块肌肉组成，负责膝关节伸展和髋关节屈曲。是人体最强有力的肌群之一。</p>
+                        <div class="exercise-tags">
+                            <span class="exercise-tag">深蹲</span>
+                            <span class="exercise-tag">腿举</span>
+                            <span class="exercise-tag">弓步蹲</span>
+                        </div>
+                    </div>
+                    <div class="muscle-card">
+                        <h4>腘绳肌</h4>
+                        <div class="latin">Hamstrings</div>
+                        <p>大腿后侧肌群，包括股二头肌、半腱肌和半膜肌，负责膝关节屈曲和髋关节伸展。</p>
+                        <div class="exercise-tags">
+                            <span class="exercise-tag">腿弯举</span>
+                            <span class="exercise-tag">硬拉</span>
+                            <span class="exercise-tag">臀桥</span>
+                        </div>
+                    </div>
+                    <div class="muscle-card">
+                        <h4>臀大肌</h4>
+                        <div class="latin">Gluteus Maximus</div>
+                        <p>臀部最大的肌肉，人体体积最大的肌肉之一，负责髋关节伸展和外旋。</p>
+                        <div class="exercise-tags">
+                            <span class="exercise-tag">深蹲</span>
+                            <span class="exercise-tag">硬拉</span>
+                            <span class="exercise-tag">臀推</span>
+                        </div>
+                    </div>
+                    <div class="muscle-card">
+                        <h4>小腿三头肌</h4>
+                        <div class="latin">Triceps Surae</div>
+                        <p>包括腓肠肌和比目鱼肌，负责踝关节跖屈（踮脚尖）。通过跟腱附着于跟骨。</p>
+                        <div class="exercise-tags">
+                            <span class="exercise-tag">提踵</span>
+                            <span class="exercise-tag">跳跃</span>
+                            <span class="exercise-tag">跑步</span>
+                        </div>
+                    </div>
+                    <div class="muscle-card">
+                        <h4>髋内收肌群</h4>
+                        <div class="latin">Hip Adductors</div>
+                        <p>大腿内侧肌群，包括长收肌、短收肌、大收肌等，负责髋关节内收。</p>
+                        <div class="exercise-tags">
+                            <span class="exercise-tag">夹腿</span>
+                            <span class="exercise-tag">侧弓步</span>
+                            <span class="exercise-tag">深蹲</span>
+                        </div>
+                    </div>
+                    <div class="muscle-card">
+                        <h4>胫骨前肌</h4>
+                        <div class="latin">Tibialis Anterior</div>
+                        <p>小腿前侧肌肉，负责踝关节背屈和足内翻。在行走时控制足部落地。</p>
+                        <div class="exercise-tags">
+                            <span class="exercise-tag">勾脚尖</span>
+                            <span class="exercise-tag">行走</span>
+                            <span class="exercise-tag">跑步</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="trunk" class="muscle-content">
+                <div class="muscle-grid">
+                    <div class="muscle-card">
+                        <h4>腹直肌</h4>
+                        <div class="latin">Rectus Abdominis</div>
+                        <p>腹部前侧的带状肌肉，被腱划分成多个肌腹（"六块腹肌"），负责脊柱屈曲。</p>
+                        <div class="exercise-tags">
+                            <span class="exercise-tag">卷腹</span>
+                            <span class="exercise-tag">仰卧起坐</span>
+                            <span class="exercise-tag">悬垂举腿</span>
+                        </div>
+                    </div>
+                    <div class="muscle-card">
+                        <h4>腹外斜肌</h4>
+                        <div class="latin">External Oblique</div>
+                        <p>腹部外侧肌肉，纤维方向斜向下，负责脊柱侧屈和旋转。</p>
+                        <div class="exercise-tags">
+                            <span class="exercise-tag">侧弯</span>
+                            <span class="exercise-tag">俄罗斯转体</span>
+                            <span class="exercise-tag">伐木</span>
+                        </div>
+                    </div>
+                    <div class="muscle-card">
+                        <h4>腹横肌</h4>
+                        <div class="latin">Transversus Abdominis</div>
+                        <p>腹部最深层的肌肉，像天然腰带一样环绕腹部，负责增加腹内压，稳定脊柱。</p>
+                        <div class="exercise-tags">
+                            <span class="exercise-tag">平板支撑</span>
+                            <span class="exercise-tag">真空腹</span>
+                            <span class="exercise-tag">深呼吸</span>
+                        </div>
+                    </div>
+                    <div class="muscle-card">
+                        <h4>竖脊肌</h4>
+                        <div class="latin">Erector Spinae</div>
+                        <p>脊柱两侧的肌群，从骨盆延伸至头部，负责脊柱伸展和维持直立姿势。</p>
+                        <div class="exercise-tags">
+                            <span class="exercise-tag">硬拉</span>
+                            <span class="exercise-tag">山羊挺身</span>
+                            <span class="exercise-tag">早安式</span>
+                        </div>
+                    </div>
+                    <div class="muscle-card">
+                        <h4>多裂肌</h4>
+                        <div class="latin">Multifidus</div>
+                        <p>脊柱深层的小肌肉群，连接相邻椎骨，负责脊柱的稳定和精细运动控制。</p>
+                        <div class="exercise-tags">
+                            <span class="exercise-tag">鸟狗式</span>
+                            <span class="exercise-tag">死虫式</span>
+                            <span class="exercise-tag">核心稳定</span>
+                        </div>
+                    </div>
+                    <div class="muscle-card">
+                        <h4>腰方肌</h4>
+                        <div class="latin">Quadratus Lumborum</div>
+                        <p>位于腰部深层，连接髂嵴和第12肋，负责脊柱侧屈和骨盆提升。</p>
+                        <div class="exercise-tags">
+                            <span class="exercise-tag">侧弯</span>
+                            <span class="exercise-tag">单腿硬拉</span>
+                            <span class="exercise-tag">侧平板</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关节运动 -->
+    <div class="section" id="joints">
+        <div class="section-title">
+            <h2>关节类型与运动</h2>
+            <div class="title-line"></div>
+            <p>关节是骨骼之间的连接点，不同关节允许不同类型的运动</p>
+        </div>
+        <div class="joints-grid">
+            <div class="joint-card">
+                <div class="joint-icon">🦾</div>
+                <h3>球窝关节</h3>
+                <p>活动度最大的关节类型，允许多轴运动</p>
+                <div class="movements">
+                    <span class="movement-tag">屈曲</span>
+                    <span class="movement-tag">伸展</span>
+                    <span class="movement-tag">外展</span>
+                    <span class="movement-tag">内收</span>
+                    <span class="movement-tag">旋转</span>
+                </div>
+                <p style="margin-top: 15px; color: #7f8c8d; font-size: 0.9em;">代表：肩关节、髋关节</p>
+            </div>
+            <div class="joint-card">
+                <div class="joint-icon">🦿</div>
+                <h3>铰链关节</h3>
+                <p>单轴关节，只允许屈曲和伸展运动</p>
+                <div class="movements">
+                    <span class="movement-tag">屈曲</span>
+                    <span class="movement-tag">伸展</span>
+                </div>
+                <p style="margin-top: 15px; color: #7f8c8d; font-size: 0.9em;">代表：肘关节、膝关节</p>
+            </div>
+            <div class="joint-card">
+                <div class="joint-icon">🔄</div>
+                <h3>车轴关节</h3>
+                <p>允许旋转运动的单轴关节</p>
+                <div class="movements">
+                    <span class="movement-tag">旋内</span>
+                    <span class="movement-tag">旋外</span>
+                </div>
+                <p style="margin-top: 15px; color: #7f8c8d; font-size: 0.9em;">代表：桡尺近侧关节</p>
+            </div>
+            <div class="joint-card">
+                <div class="joint-icon">✋</div>
+                <h3>椭圆关节</h3>
+                <p>双轴关节，允许两个平面的运动</p>
+                <div class="movements">
+                    <span class="movement-tag">屈曲</span>
+                    <span class="movement-tag">伸展</span>
+                    <span class="movement-tag">外展</span>
+                    <span class="movement-tag">内收</span>
+                </div>
+                <p style="margin-top: 15px; color: #7f8c8d; font-size: 0.9em;">代表：桡腕关节</p>
+            </div>
+            <div class="joint-card">
+                <div class="joint-icon">🤏</div>
+                <h3>鞍状关节</h3>
+                <p>双轴关节，活动度介于椭圆和球窝之间</p>
+                <div class="movements">
+                    <span class="movement-tag">屈曲</span>
+                    <span class="movement-tag">伸展</span>
+                    <span class="movement-tag">外展</span>
+                    <span class="movement-tag">内收</span>
+                    <span class="movement-tag">对掌</span>
+                </div>
+                <p style="margin-top: 15px; color: #7f8c8d; font-size: 0.9em;">代表：拇指腕掌关节</p>
+            </div>
+            <div class="joint-card">
+                <div class="joint-icon">🦴</div>
+                <h3>平面关节</h3>
+                <p>微动关节，允许滑动和轻微旋转</p>
+                <div class="movements">
+                    <span class="movement-tag">滑动</span>
+                    <span class="movement-tag">轻微旋转</span>
+                </div>
+                <p style="margin-top: 15px; color: #7f8c8d; font-size: 0.9em;">代表：椎间关节、腕骨间关节</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 运动平面 -->
+    <section class="planes-bg" id="planes">
+        <div class="section">
+            <div class="section-title">
+                <h2>运动平面与轴线</h2>
+                <div class="title-line"></div>
+                <p>人体运动发生在三个基本平面，围绕三个基本轴线</p>
+            </div>
+            <div class="planes-grid">
+                <div class="plane-card">
+                    <h3>矢状面</h3>
+                    <div class="axis">冠状轴（额状轴）</div>
+                    <p>将身体分为左右两部分的垂直平面</p>
+                    <ul>
+                        <li>屈曲（Flexion）</li>
+                        <li>伸展（Extension）</li>
+                        <li>背屈（Dorsiflexion）</li>
+                        <li>跖屈（Plantarflexion）</li>
+                    </ul>
+                </div>
+                <div class="plane-card">
+                    <h3>冠状面</h3>
+                    <div class="axis">矢状轴</div>
+                    <p>将身体分为前后两部分的垂直平面</p>
+                    <ul>
+                        <li>外展（Abduction）</li>
+                        <li>内收（Adduction）</li>
+                        <li>侧屈（Lateral Flexion）</li>
+                        <li>桡偏/尺偏</li>
+                    </ul>
+                </div>
+                <div class="plane-card">
+                    <h3>水平面</h3>
+                    <div class="axis">垂直轴（纵轴）</div>
+                    <p>将身体分为上下两部分的水平平面</p>
+                    <ul>
+                        <li>内旋（Internal Rotation）</li>
+                        <li>外旋（External Rotation）</li>
+                        <li>旋前（Pronation）</li>
+                        <li>旋后（Supination）</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 动作分析 -->
+    <div class="section">
+        <div class="section-title">
+            <h2>常见动作的肌肉参与</h2>
+            <div class="title-line"></div>
+            <p>了解每个动作中哪些肌肉在发力，有助于针对性训练</p>
+        </div>
+        <table class="movement-table">
+            <thead>
+                <tr>
+                    <th>动作名称</th>
+                    <th>主要发力肌群</th>
+                    <th>协同肌群</th>
+                    <th>稳定肌群</th>
+                    <th>运动平面</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="movement-name">深蹲</td>
+                    <td>股四头肌、臀大肌</td>
+                    <td>腘绳肌、内收肌</td>
+                    <td>核心肌群、竖脊肌</td>
+                    <td>矢状面</td>
+                </tr>
+                <tr>
+                    <td class="movement-name">卧推</td>
+                    <td>胸大肌、三角肌前束</td>
+                    <td>肱三头肌</td>
+                    <td>肩袖肌群、核心</td>
+                    <td>矢状面</td>
+                </tr>
+                <tr>
+                    <td class="movement-name">硬拉</td>
+                    <td>竖脊肌、臀大肌、腘绳肌</td>
+                    <td>股四头肌、背阔肌</td>
+                    <td>核心肌群、斜方肌</td>
+                    <td>矢状面</td>
+                </tr>
+                <tr>
+                    <td class="movement-name">引体向上</td>
+                    <td>背阔肌、肱二头肌</td>
+                    <td>斜方肌、菱形肌</td>
+                    <td>核心肌群、肩袖</td>
+                    <td>矢状面</td>
+                </tr>
+                <tr>
+                    <td class="movement-name">推举</td>
+                    <td>三角肌、肱三头肌</td>
+                    <td>胸大肌上束、斜方肌</td>
+                    <td>核心肌群、肩袖</td>
+                    <td>矢状面</td>
+                </tr>
+                <tr>
+                    <td class="movement-name">划船</td>
+                    <td>背阔肌、菱形肌</td>
+                    <td>肱二头肌、斜方肌</td>
+                    <td>核心肌群、竖脊肌</td>
+                    <td>矢状面</td>
+                </tr>
+                <tr>
+                    <td class="movement-name">侧平举</td>
+                    <td>三角肌中束</td>
+                    <td>斜方肌、冈上肌</td>
+                    <td>核心肌群</td>
+                    <td>冠状面</td>
+                </tr>
+                <tr>
+                    <td class="movement-name">俄罗斯转体</td>
+                    <td>腹外斜肌、腹内斜肌</td>
+                    <td>腹直肌</td>
+                    <td>髋屈肌</td>
+                    <td>水平面</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 互动肌肉图 -->
+    <section class="interactive-bg" id="interactive">
+        <div class="section">
+            <div class="section-title">
+                <h2>互动肌肉探索</h2>
+                <div class="title-line"></div>
+                <p>点击不同肌肉区域，了解详细信息</p>
+            </div>
+            <div class="body-container">
+                <div class="body-svg">
+                    <svg width="350" height="600" viewBox="0 0 350 600">
+                        <!-- 头部 -->
+                        <ellipse cx="175" cy="70" rx="40" ry="50" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2"/>
+                        
+                        <!-- 颈部 -->
+                        <rect x="160" y="120" width="30" height="30" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2"/>
+                        
+                        <!-- 躯干 -->
+                        <path d="M 130 150 L 220 150 L 230 280 L 120 280 Z" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2"/>
+                        
+                        <!-- 胸部肌肉 -->
+                        <ellipse class="muscle-highlight" cx="155" cy="180" rx="25" ry="30" fill="#3498db" opacity="0.3" onclick="showMuscleInfo('chest')"/>
+                        <ellipse class="muscle-highlight" cx="195" cy="180" rx="25" ry="30" fill="#3498db" opacity="0.3" onclick="showMuscleInfo('chest')"/>
+                        
+                        <!-- 腹部 -->
+                        <rect class="muscle-highlight" x="155" y="210" width="40" height="60" fill="#2ecc71" opacity="0.3" onclick="showMuscleInfo('abs')"/>
+                        
+                        <!-- 左臂 -->
+                        <ellipse class="muscle-highlight" cx="110" cy="200" rx="20" ry="35" fill="#e74c3c" opacity="0.3" onclick="showMuscleInfo('shoulder')"/>
+                        <ellipse class="muscle-highlight" cx="100" cy="260" rx="15" ry="30" fill="#9b59b6" opacity="0.3" onclick="showMuscleInfo('bicep')"/>
+                        
+                        <!-- 右臂 -->
+                        <ellipse class="muscle-highlight" cx="240" cy="200" rx="20" ry="35" fill="#e74c3c" opacity="0.3" onclick="showMuscleInfo('shoulder')"/>
+                        <ellipse class="muscle-highlight" cx="250" cy="260" rx="15" ry="30" fill="#9b59b6" opacity="0.3" onclick="showMuscleInfo('bicep')"/>
+                        
+                        <!-- 大腿 -->
+                        <ellipse class="muscle-highlight" cx="145" cy="340" rx="25" ry="50" fill="#f39c12" opacity="0.3" onclick="showMuscleInfo('quad')"/>
+                        <ellipse class="muscle-highlight" cx="205" cy="340" rx="25" ry="50" fill="#f39c12" opacity="0.3" onclick="showMuscleInfo('quad')"/>
+                        
+                        <!-- 小腿 -->
+                        <ellipse class="muscle-highlight" cx="145" cy="440" rx="18" ry="40" fill="#1abc9c" opacity="0.3" onclick="showMuscleInfo('calf')"/>
+                        <ellipse class="muscle-highlight" cx="205" cy="440" rx="18" ry="40" fill="#1abc9c" opacity="0.3" onclick="showMuscleInfo('calf')"/>
+                        
+                        <!-- 标签 -->
+                        <text x="175" y="580" text-anchor="middle" fill="#7f8c8d" font-size="14">点击肌肉区域查看详情</text>
+                    </svg>
+                </div>
+                <div class="muscle-info-panel" id="muscleInfoPanel">
+                    <h3 id="muscleName">选择肌肉区域</h3>
+                    <div class="latin-name" id="muscleLatin">点击左侧人体图的肌肉区域</div>
+                    
+                    <div class="info-section">
+                        <h4>📍 位置</h4>
+                        <p id="muscleLocation">请选择一个肌肉区域查看详细信息</p>
+                    </div>
+                    
+                    <div class="info-section">
+                        <h4>🎯 主要功能</h4>
+                        <ul id="muscleFunction">
+                            <li>等待选择...</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-section">
+                        <h4>💪 训练动作</h4>
+                        <ul id="muscleExercises">
+                            <li>等待选择...</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>🦴 运动解剖学 - 理解人体，科学训练</p>
+        <p style="margin-top: 10px; opacity: 0.5;">© 2024 Exercise Anatomy Guide. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // 标签切换
+        function switchTab(tabName) {
+            // 移除所有active类
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.muscle-content').forEach(content => content.classList.remove('active'));
+            
+            // 添加active类
+            event.target.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+
+        // 肌肉信息数据
+        const muscleData = {
+            chest: {
+                name: '胸大肌',
+                latin: 'Pectoralis Major',
+                location: '位于胸部前侧，起自锁骨、胸骨和肋软骨，止于肱骨大结节嵴',
+                function: [
+                    '肩关节内收（将手臂向身体中线靠拢）',
+                    '肩关节内旋（手臂向内旋转）',
+                    '肩关节屈曲（抬起手臂向前）',
+                    '辅助呼吸（深呼吸时协助提肋）'
+                ],
+                exercises: [
+                    '杠铃卧推 - 整体胸肌发展',
+                    '上斜哑铃卧推 - 重点刺激上胸',
+                    '双杠臂屈伸 - 下胸和外侧轮廓',
+                    '绳索飞鸟 - 孤立刺激，感受拉伸'
+                ]
+            },
+            abs: {
+                name: '腹直肌',
+                latin: 'Rectus Abdominis',
+                location: '位于腹部前侧，起自耻骨联合，止于第5-7肋软骨和剑突',
+                function: [
+                    '脊柱屈曲（卷腹动作）',
+                    '骨盆后倾',
+                    '增加腹内压，稳定脊柱',
+                    '辅助呼气'
+                ],
+                exercises: [
+                    '卷腹 - 基础腹肌训练',
+                    '悬垂举腿 - 重点刺激下腹',
+                    '绳索卷腹 - 可调节阻力',
+                    '平板支撑 - 等长收缩，增强稳定性'
+                ]
+            },
+            shoulder: {
+                name: '三角肌',
+                latin: 'Deltoid',
+                location: '覆盖肩关节，分前束、中束、后束三部分',
+                function: [
+                    '前束：肩关节屈曲和内旋',
+                    '中束：肩关节外展（侧平举）',
+                    '后束：肩关节伸展和外旋',
+                    '整体：稳定肩关节，保护肩袖'
+                ],
+                exercises: [
+                    '哑铃推举 - 整体肩部发展',
+                    '侧平举 - 重点刺激中束',
+                    '前平举 - 孤立前束',
+                    '俯身飞鸟 - 重点刺激后束'
+                ]
+            },
+            bicep: {
+                name: '肱二头肌',
+                latin: 'Biceps Brachii',
+                location: '位于上臂前侧，长头起自肩胛骨盂上结节，短头起自喙突，止于桡骨粗隆',
+                function: [
+                    '肘关节屈曲（弯举动作）',
+                    '前臂旋后（掌心向上）',
+                    '辅助肩关节屈曲',
+                    '稳定肘关节'
+                ],
+                exercises: [
+                    '杠铃弯举 - 整体二头发展',
+                    '哑铃交替弯举 - 改善左右不平衡',
+                    '锤式弯举 - 刺激肱肌和肱桡肌',
+                    '集中弯举 - 孤立刺激，感受顶峰收缩'
+                ]
+            },
+            quad: {
+                name: '股四头肌',
+                latin: 'Quadriceps Femoris',
+                location: '位于大腿前侧，由股直肌、股外侧肌、股内侧肌和股中间肌组成',
+                function: [
+                    '膝关节伸展（踢腿动作）',
+                    '髋关节屈曲（仅股直肌）',
+                    '维持站立姿势',
+                    '行走、跑步、跳跃的主要动力'
+                ],
+                exercises: [
+                    '杠铃深蹲 - 整体腿部发展',
+                    '腿举 - 可调节脚位刺激不同部位',
+                    '弓步蹲 - 单腿训练，改善平衡',
+                    '腿屈伸 - 孤立刺激股四头肌'
+                ]
+            },
+            calf: {
+                name: '小腿三头肌',
+                latin: 'Triceps Surae',
+                location: '位于小腿后侧，包括腓肠肌（两头）和比目鱼肌，通过跟腱止于跟骨',
+                function: [
+                    '踝关节跖屈（踮脚尖）',
+                    '辅助膝关节屈曲（腓肠肌）',
+                    '行走时推进身体前进',
+                    '维持直立姿势的稳定'
+                ],
+                exercises: [
+                    '站姿提踵 - 重点刺激腓肠肌',
+                    '坐姿提踵 - 重点刺激比目鱼肌',
+                    '单腿提踵 - 改善左右不平衡',
+                    '跳跃训练 - 增强爆发力'
+                ]
+            }
+        };
+
+        // 显示肌肉信息
+        function showMuscleInfo(muscleKey) {
+            const data = muscleData[muscleKey];
+            
+            document.getElementById('muscleName').textContent = data.name;
+            document.getElementById('muscleLatin').textContent = data.latin;
+            document.getElementById('muscleLocation').textContent = data.location;
+            
+            const functionList = document.getElementById('muscleFunction');
+            functionList.innerHTML = data.function.map(f => `<li>${f}</li>`).join('');
+            
+            const exerciseList = document.getElementById('muscleExercises');
+            exerciseList.innerHTML = data.exercises.map(e => `<li>${e}</li>`).join('');
+        }
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

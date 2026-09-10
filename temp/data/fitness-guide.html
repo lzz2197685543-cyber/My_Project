@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>健身完全指南 - 打造健康体魄</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            color: #2d3436;
+            background: #f0f0f0;
+        }
+
+        /* ===== 顶部导航 ===== */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #e74c3c, #e67e22);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2d3436;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #e74c3c;
+        }
+
+        /* ===== Hero 区域 ===== */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #e74c3c 0%, #e67e22 50%, #f39c12 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 15px 50px;
+            background: white;
+            color: #e74c3c;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ===== 通用 Section ===== */
+        .section {
+            padding: 80px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5em;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #2d3436;
+        }
+
+        .section-title p {
+            font-size: 1.2em;
+            color: #636e72;
+        }
+
+        .title-line {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #e74c3c, #e67e22);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        /* ===== 健身益处 ===== */
+        .benefits-bg {
+            background: white;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            border-color: #e74c3c;
+            box-shadow: 0 20px 60px rgba(231, 76, 60, 0.15);
+        }
+
+        .benefit-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: #e74c3c;
+        }
+
+        .benefit-card p {
+            color: #636e72;
+            line-height: 1.8;
+        }
+
+        /* ===== 训练计划 ===== */
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .plan-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .plan-header {
+            padding: 30px;
+            color: white;
+            text-align: center;
+        }
+
+        .plan-card:nth-child(1) .plan-header { background: linear-gradient(135deg, #00b894, #00cec9); }
+        .plan-card:nth-child(2) .plan-header { background: linear-gradient(135deg, #e74c3c, #e67e22); }
+        .plan-card:nth-child(3) .plan-header { background: linear-gradient(135deg, #6c5ce7, #a29bfe); }
+
+        .plan-header h3 {
+            font-size: 1.6em;
+            margin-bottom: 5px;
+        }
+
+        .plan-header .level {
+            opacity: 0.9;
+            font-size: 0.9em;
+        }
+
+        .plan-body {
+            padding: 30px;
+        }
+
+        .plan-body ul {
+            list-style: none;
+        }
+
+        .plan-body li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .plan-body li:last-child {
+            border-bottom: none;
+        }
+
+        .plan-body li::before {
+            content: '✓';
+            color: #00b894;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        /* ===== 动作展示 ===== */
+        .exercises-bg {
+            background: white;
+        }
+
+        .exercise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .exercise-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .exercise-card:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #e74c3c, #e67e22);
+            color: white;
+        }
+
+        .exercise-card:hover h4 {
+            color: white;
+        }
+
+        .exercise-card:hover p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .exercise-emoji {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .exercise-card h4 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #2d3436;
+            transition: color 0.3s;
+        }
+
+        .exercise-card p {
+            color: #636e72;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+
+        /* ===== 营养指南 ===== */
+        .nutrition-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .nutrition-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+        }
+
+        .nutrition-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .nutrition-card .icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .nutrition-card h4 {
+            margin-bottom: 10px;
+            color: #e74c3c;
+        }
+
+        .nutrition-card .amount {
+            font-size: 1.8em;
+            font-weight: 800;
+            color: #2d3436;
+            margin: 10px 0;
+        }
+
+        .nutrition-card p {
+            color: #636e72;
+            font-size: 0.9em;
+        }
+
+        .meal-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .meal-table th {
+            background: linear-gradient(135deg, #e74c3c, #e67e22);
+            color: white;
+            padding: 15px 20px;
+            text-align: left;
+        }
+
+        .meal-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .meal-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .meal-table tr:hover td {
+            background: #fff5f5;
+        }
+
+        /* ===== 健身贴士 ===== */
+        .tips-bg {
+            background: linear-gradient(135deg, #2d3436, #636e72);
+            color: white;
+        }
+
+        .tips-bg .section-title h2 {
+            color: white;
+        }
+
+        .tips-bg .section-title p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .tip-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .tip-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .tip-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #e74c3c, #e67e22);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .tip-card h4 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .tip-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+        }
+
+        /* ===== 周计划表 ===== */
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .schedule-table th {
+            background: linear-gradient(135deg, #e74c3c, #e67e22);
+            color: white;
+            padding: 18px 15px;
+            font-size: 1em;
+        }
+
+        .schedule-table td {
+            padding: 18px 15px;
+            border-bottom: 1px solid #f0f0f0;
+            text-align: center;
+            vertical-align: top;
+        }
+
+        .schedule-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .schedule-table .day-name {
+            font-weight: 700;
+            color: #e74c3c;
+            font-size: 1.1em;
+        }
+
+        .rest-day {
+            background: #f0fff4;
+            color: #00b894;
+            font-weight: 600;
+        }
+
+        /* ===== BMI 计算器 ===== */
+        .bmi-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 20px;
+            padding: 50px;
+            margin: 40px auto;
+            max-width: 800px;
+        }
+
+        .bmi-section h3 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        .bmi-form {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .bmi-form input {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            width: 180px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            outline: none;
+        }
+
+        .bmi-form input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .bmi-form button {
+            padding: 12px 30px;
+            background: white;
+            color: #764ba2;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .bmi-form button:hover {
+            transform: scale(1.05);
+        }
+
+        .bmi-result {
+            text-align: center;
+            font-size: 1.3em;
+            margin-top: 20px;
+            min-height: 40px;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background: #2d3436;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+
+        footer p {
+            opacity: 0.7;
+        }
+
+        footer .footer-links {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        footer .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer .footer-links a:hover {
+            color: #e74c3c;
+        }
+
+        /* ===== 响应式 ===== */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5em; }
+            .hero p { font-size: 1.1em; }
+            .section { padding: 50px 20px; }
+            .section-title h2 { font-size: 2em; }
+            nav { padding: 10px 20px; }
+            .nav-links { gap: 15px; }
+            .bmi-section { padding: 30px 20px; margin: 20px; }
+            .schedule-table { font-size: 0.85em; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <nav>
+        <div class="logo">💪 FitLife</div>
+        <ul class="nav-links">
+            <li><a href="#benefits">健身益处</a></li>
+            <li><a href="#plans">训练计划</a></li>
+            <li><a href="#exercises">动作指导</a></li>
+            <li><a href="#nutrition">营养饮食</a></li>
+            <li><a href="#tips">健身贴士</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>🏋️ 开启你的健身之旅</h1>
+            <p>科学的训练方法，合理的营养搭配，帮助你打造健康体魄，遇见更好的自己</p>
+            <a href="#plans" class="cta-btn">立即开始 →</a>
+        </div>
+    </section>
+
+    <!-- 健身益处 -->
+    <section class="benefits-bg" id="benefits">
+        <div class="section">
+            <div class="section-title">
+                <h2>健身的益处</h2>
+                <div class="title-line"></div>
+                <p>坚持健身，你将收获意想不到的改变</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">❤️</div>
+                    <h3>增强心肺功能</h3>
+                    <p>规律的有氧运动能显著提升心肺耐力，降低心血管疾病风险，让你的心脏更加强健有力。</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🦴</div>
+                    <h3>强化骨骼肌肉</h3>
+                    <p>力量训练可以增加骨密度，预防骨质疏松，同时塑造优美的肌肉线条，提升基础代谢率。</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🧠</div>
+                    <h3>改善心理健康</h3>
+                    <p>运动释放内啡肽，有效缓解压力和焦虑，提升自信心，改善睡眠质量，让你每天充满活力。</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>提升精力水平</h3>
+                    <p>科学训练能提高身体的能量代谢效率，让你在工作生活中精力充沛，告别疲惫感。</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3>增强免疫力</h3>
+                    <p>适度运动能促进免疫细胞活性，增强身体抵抗疾病的能力，减少感冒和感染的几率。</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">✨</div>
+                    <h3>延缓衰老</h3>
+                    <p>健身能促进生长激素分泌，保持皮肤弹性，维持身体机能年轻化，让你看起来比实际年龄更年轻。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 训练计划 -->
+    <div class="section" id="plans">
+        <div class="section-title">
+            <h2>训练计划推荐</h2>
+            <div class="title-line"></div>
+            <p>根据自身水平选择合适的训练方案</p>
+        </div>
+        <div class="plans-grid">
+            <div class="plan-card">
+                <div class="plan-header">
+                    <h3>🌱 新手入门</h3>
+                    <div class="level">适合零基础 | 每周3次</div>
+                </div>
+                <div class="plan-body">
+                    <ul>
+                        <li>全身热身 10 分钟</li>
+                        <li>深蹲 3组 × 12次</li>
+                        <li>俯卧撑 3组 × 10次</li>
+                        <li>平板支撑 3组 × 30秒</li>
+                        <li>哑铃划船 3组 × 12次</li>
+                        <li>拉伸放松 10 分钟</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="plan-card">
+                <div class="plan-header">
+                    <h3>🔥 进阶提升</h3>
+                    <div class="level">有一定基础 | 每周4-5次</div>
+                </div>
+                <div class="plan-body">
+                    <ul>
+                        <li>动态热身 10 分钟</li>
+                        <li>杠铃深蹲 4组 × 10次</li>
+                        <li>卧推 4组 × 10次</li>
+                        <li>硬拉 4组 × 8次</li>
+                        <li>引体向上 4组 × 8次</li>
+                        <li>HIIT 有氧 20 分钟</li>
+                        <li>核心训练 15 分钟</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="plan-card">
+                <div class="plan-header">
+                    <h3>🏆 高级强化</h3>
+                    <div class="level">经验丰富 | 每周5-6次</div>
+                </div>
+                <div class="plan-body">
+                    <ul>
+                        <li>专项热身 15 分钟</li>
+                        <li>复合动作 5组 × 6-8次</li>
+                        <li>孤立动作 4组 × 10-12次</li>
+                        <li>超级组训练 3-4组</li>
+                        <li>有氧间歇 30 分钟</li>
+                        <li>柔韧性训练 20 分钟</li>
+                        <li>泡沫轴放松 15 分钟</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 一周训练安排 -->
+    <div class="section">
+        <div class="section-title">
+            <h2>一周训练安排</h2>
+            <div class="title-line"></div>
+            <p>科学分配训练日与休息日，确保高效恢复</p>
+        </div>
+        <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th>星期</th>
+                    <th>训练部位</th>
+                    <th>训练内容</th>
+                    <th>时长</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="day-name">周一</td>
+                    <td>胸部 + 三头</td>
+                    <td>卧推、上斜哑铃飞鸟、绳索夹胸、三头下压</td>
+                    <td>60分钟</td>
+                </tr>
+                <tr>
+                    <td class="day-name">周二</td>
+                    <td>背部 + 二头</td>
+                    <td>引体向上、杠铃划船、高位下拉、弯举</td>
+                    <td>60分钟</td>
+                </tr>
+                <tr>
+                    <td class="day-name">周三</td>
+                    <td class="rest-day">🧘 休息日</td>
+                    <td class="rest-day">轻度有氧 / 瑜伽拉伸</td>
+                    <td class="rest-day">30分钟</td>
+                </tr>
+                <tr>
+                    <td class="day-name">周四</td>
+                    <td>腿部</td>
+                    <td>深蹲、腿举、罗马尼亚硬拉、腿弯举</td>
+                    <td>70分钟</td>
+                </tr>
+                <tr>
+                    <td class="day-name">周五</td>
+                    <td>肩部 + 核心</td>
+                    <td>推举、侧平举、面拉、平板支撑、卷腹</td>
+                    <td>55分钟</td>
+                </tr>
+                <tr>
+                    <td class="day-name">周六</td>
+                    <td>全身 / 有氧</td>
+                    <td>HIIT、游泳、跑步或球类运动</td>
+                    <td>45分钟</td>
+                </tr>
+                <tr>
+                    <td class="day-name">周日</td>
+                    <td class="rest-day">😴 完全休息</td>
+                    <td class="rest-day">充分恢复，保证睡眠</td>
+                    <td class="rest-day">—</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 动作指导 -->
+    <section class="exercises-bg" id="exercises">
+        <div class="section">
+            <div class="section-title">
+                <h2>经典动作指导</h2>
+                <div class="title-line"></div>
+                <p>掌握正确的动作要领，事半功倍</p>
+            </div>
+            <div class="exercise-grid">
+                <div class="exercise-card">
+                    <div class="exercise-emoji">🏋️</div>
+                    <h4>深蹲 Squat</h4>
+                    <p>双脚与肩同宽，背部挺直，下蹲至大腿平行地面，膝盖不超过脚尖</p>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-emoji">💪</div>
+                    <h4>卧推 Bench Press</h4>
+                    <p>肩胛骨收紧贴紧凳面，杠铃下放至胸部，发力推起至手臂伸直</p>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-emoji">🤸</div>
+                    <h4>硬拉 Deadlift</h4>
+                    <p>双脚与髋同宽，屈髋屈膝握杠，背部挺直，发力站直锁定</p>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-emoji">🧗</div>
+                    <h4>引体向上 Pull-up</h4>
+                    <p>双手宽握横杆，发力拉起至下巴过杆，缓慢下放至手臂伸直</p>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-emoji">🤾</div>
+                    <h4>推举 Overhead Press</h4>
+                    <p>站立或坐姿，杠铃从锁骨位置推起至头顶，核心收紧保持稳定</p>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-emoji">🏃</div>
+                    <h4>弓步蹲 Lunge</h4>
+                    <p>一脚向前迈出，下蹲至前后腿均呈90度，交替进行保持平衡</p>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-emoji">🧘</div>
+                    <h4>平板支撑 Plank</h4>
+                    <p>前臂和脚尖支撑，身体呈一条直线，核心收紧保持均匀呼吸</p>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-emoji">🚴</div>
+                    <h4>壶铃摆荡 Kettlebell Swing</h4>
+                    <p>屈髋发力将壶铃摆至肩高，利用臀部爆发力，保持手臂放松</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 营养指南 -->
+    <div class="section" id="nutrition">
+        <div class="section-title">
+            <h2>营养饮食指南</h2>
+            <div class="title-line"></div>
+            <p>三分练，七分吃，科学饮食是健身成功的关键</p>
+        </div>
+        <div class="nutrition-grid">
+            <div class="nutrition-card">
+                <div class="icon">🥩</div>
+                <h4>蛋白质</h4>
+                <div class="amount">1.6-2.2g/kg</div>
+                <p>鸡胸肉、鱼虾、鸡蛋、牛奶、豆腐</p>
+            </div>
+            <div class="nutrition-card">
+                <div class="icon">🍚</div>
+                <h4>碳水化合物</h4>
+                <div class="amount">3-5g/kg</div>
+                <p>糙米、燕麦、红薯、全麦面包</p>
+            </div>
+            <div class="nutrition-card">
+                <div class="icon">🥑</div>
+                <h4>健康脂肪</h4>
+                <div class="amount">0.8-1g/kg</div>
+                <p>坚果、牛油果、橄榄油、深海鱼</p>
+            </div>
+            <div class="nutrition-card">
+                <div class="icon">💧</div>
+                <h4>水分摄入</h4>
+                <div class="amount">2-3L/天</div>
+                <p>训练前后额外补充，保持充分水合</p>
+            </div>
+        </div>
+
+        <h3 style="text-align: center; margin: 40px 0 20px; color: #2d3436; font-size: 1.5em;">📋 一日参考食谱</h3>
+        <table class="meal-table">
+            <thead>
+                <tr>
+                    <th>餐次</th>
+                    <th>时间</th>
+                    <th>推荐食物</th>
+                    <th>热量参考</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>🌅 早餐</strong></td>
+                    <td>7:00-8:00</td>
+                    <td>燕麦粥 + 鸡蛋2个 + 牛奶 + 香蕉</td>
+                    <td>~500 kcal</td>
+                </tr>
+                <tr>
+                    <td><strong>🍎 加餐</strong></td>
+                    <td>10:00</td>
+                    <td>坚果一小把 + 酸奶</td>
+                    <td>~200 kcal</td>
+                </tr>
+                <tr>
+                    <td><strong>☀️ 午餐</strong></td>
+                    <td>12:00-13:00</td>
+                    <td>糙米饭 + 鸡胸肉 + 西兰花 + 番茄</td>
+                    <td>~600 kcal</td>
+                </tr>
+                <tr>
+                    <td><strong>🏋️ 训练前</strong></td>
+                    <td>15:30</td>
+                    <td>全麦面包 + 花生酱</td>
+                    <td>~250 kcal</td>
+                </tr>
+                <tr>
+                    <td><strong>🥤 训练后</strong></td>
+                    <td>17:30</td>
+                    <td>蛋白粉 + 香蕉</td>
+                    <td>~300 kcal</td>
+                </tr>
+                <tr>
+                    <td><strong>🌙 晚餐</strong></td>
+                    <td>19:00-20:00</td>
+                    <td>三文鱼 + 红薯 + 蔬菜沙拉</td>
+                    <td>~550 kcal</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- BMI 计算器 -->
+    <div class="section">
+        <div class="bmi-section">
+            <h3>📊 BMI 指数计算器</h3>
+            <div class="bmi-form">
+                <input type="number" id="height" placeholder="身高 (cm)" min="100" max="250">
+                <input type="number" id="weight" placeholder="体重 (kg)" min="30" max="300">
+                <button onclick="calculateBMI()">计算 BMI</button>
+            </div>
+            <div class="bmi-result" id="bmiResult"></div>
+        </div>
+    </div>
+
+    <!-- 健身贴士 -->
+    <section class="tips-bg" id="tips">
+        <div class="section">
+            <div class="section-title">
+                <h2>💡 健身黄金贴士</h2>
+                <div class="title-line"></div>
+                <p>这些建议将帮助你少走弯路，高效达成目标</p>
+            </div>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-number">1</div>
+                    <h4>循序渐进</h4>
+                    <p>不要急于增加重量和强度，每周增加不超过10%的训练量，给身体足够的适应时间。</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">2</div>
+                    <h4>重视热身</h4>
+                    <p>每次训练前至少进行10分钟热身，激活目标肌群，预防运动损伤。冷肌肉更容易受伤。</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">3</div>
+                    <h4>动作标准优先</h4>
+                    <p>宁可轻重量做标准动作，也不要大重量做变形动作。正确的动作模式是长期进步的基础。</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">4</div>
+                    <h4>保证充足睡眠</h4>
+                    <p>肌肉在休息时生长，每天保证7-9小时高质量睡眠。睡眠不足会影响恢复和训练效果。</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">5</div>
+                    <h4>记录训练日志</h4>
+                    <p>记录每次训练的动作、重量和组数，追踪进步趋势，及时调整训练计划。</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">6</div>
+                    <h4>保持耐心和坚持</h4>
+                    <p>健身是一场马拉松而非短跑。通常需要8-12周才能看到明显变化，持之以恒是关键。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="#benefits">健身益处</a>
+            <a href="#plans">训练计划</a>
+            <a href="#exercises">动作指导</a>
+            <a href="#nutrition">营养饮食</a>
+            <a href="#tips">健身贴士</a>
+        </div>
+        <p>💪 坚持运动，遇见更好的自己</p>
+        <p style="margin-top: 10px; opacity: 0.5;">© 2024 FitLife 健身指南. All rights reserved.</p>
+    </footer>
+
+    <!-- BMI 计算脚本 -->
+    <script>
+        function calculateBMI() {
+            const height = parseFloat(document.getElementById('height').value) / 100;
+            const weight = parseFloat(document.getElementById('weight').value);
+            const resultDiv = document.getElementById('bmiResult');
+
+            if (!height || !weight || height <= 0 || weight <= 0) {
+                resultDiv.innerHTML = '⚠️ 请输入有效的身高和体重';
+                return;
+            }
+
+            const bmi = (weight / (height * height)).toFixed(1);
+            let category = '';
+            let emoji = '';
+
+            if (bmi < 18.5) {
+                category = '偏瘦 - 建议增加营养摄入';
+                emoji = '🔵';
+            } else if (bmi < 24) {
+                category = '正常 - 继续保持！';
+                emoji = '🟢';
+            } else if (bmi < 28) {
+                category = '偏胖 - 建议增加运动量';
+                emoji = '🟡';
+            } else {
+                category = '肥胖 - 建议咨询专业人士';
+                emoji = '🔴';
+            }
+
+            resultDiv.innerHTML = `${emoji} 你的 BMI 指数为 <strong>${bmi}</strong>，属于 <strong>${category}</strong>`;
+        }
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
