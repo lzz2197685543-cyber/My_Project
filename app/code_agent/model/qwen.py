@@ -13,9 +13,9 @@ api_key = os.getenv("DASHSCOPE_API_KEY")
 
 # 初始化 LLM
 qwen_llm = ChatOpenAI(
-    model="qwen3.7-plus",
+    model="qwen3.8-flash",
     api_key=api_key,
-    base_url="https://ws-kcaoxz5olbi6r3qa.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+    base_url="https://ws-5vz62sfwt5od2rps.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
     streaming=True,
     temperature=0.7,
 )

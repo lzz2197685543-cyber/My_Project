@@ -9,3 +9,6 @@ wheels/
 # Virtual environments
 .venv
 .env
+
+# 终端工具运行时状态（记录 open_powershell 打开的终端 PID）
+app/code_agent/mcp/.powershell_terminal.json

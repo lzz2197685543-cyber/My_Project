@@ -6,11 +6,11 @@ load_dotenv()
 
 client = OpenAI(
     api_key=os.getenv("DASHSCOPE_API_KEY"),
-    base_url="https://ws-kcaoxz5olbi6r3qa.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+    base_url="https://ws-5vz62sfwt5od2rps.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
 )
 
 completion = client.chat.completions.create(
-    model="qwen-plus",
+    model="qwen3.7-plus",
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": "AI Agent是什么？"},
