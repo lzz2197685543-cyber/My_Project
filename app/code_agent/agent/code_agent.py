@@ -4,11 +4,12 @@ from langchain_core.prompts import PromptTemplate
 from langgraph.prebuilt import create_react_agent
 from langchain_core.runnables import RunnableConfig
 from app.code_agent.model.qwen import qwen_llm
-from app.code_agent.rag.rag import query_rag_from_bailian
+from app.code_agent.rag.self_rag import  query_rag_from_bailian
 from app.code_agent.tools.file_tools import file_tools
 from app.code_agent.tools.file_saver import CheckpointSaver
 from app.code_agent.tools.shell_tools import get_stdio_shell_tools
-from app.code_agent.tools.rag_tools import get_rag_tools
+from app.code_agent.tools.self_rag_tools import  self_get_rag_tools
+from app.code_agent.tools.browser_tools import get_stdio_browser_tools
 from app.code_agent.tools.powershell_tools import get_stdio_powershell_tools
 import asyncio
 from colorama import init, Fore, Style
@@ -52,13 +53,15 @@ def print_tool_result(name, content, duration):
 
 
 async def run_agent():
-    memory = CheckpointSaver(base_dir='D:\\sd14\\ai-agent\\temp\\checkpoint')
+    memory = CheckpointSaver(base_dir='E:\\Ai_Agent\\temp\\checkpoint')  # D:\\sd14\\ai-agent\\temp\\checkpoint
     # shell_tools = await get_stdio_shell_tools()
     powershell_tools = await get_stdio_powershell_tools()
 
     # 方案二：提供一个RAG工具，让智能体通过工具查询知识
-    rag_tools = await get_rag_tools()
-    tools = file_tools + powershell_tools+ rag_tools
+    rag_self_tools = await self_get_rag_tools()
+
+    browser_tools=await get_stdio_browser_tools()
+    tools = file_tools + powershell_tools+ rag_self_tools+ browser_tools
 
     prompt = PromptTemplate.from_template(template="""
     # 角色

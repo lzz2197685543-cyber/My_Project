@@ -34,6 +34,7 @@ Annotated[str, Field(description="本地知识文件的路径，需要传入绝�
 
     return add_document_to_index(client, workspace_id, index_id, file_id)
 
+
 @mcp.tool(name="query_bailian_rag_job_status", description='查询上传到百炼知识库中的知识文件的处理状态')
 def query_bailian_rag_job_status(job_id:str):
     client = create_client()

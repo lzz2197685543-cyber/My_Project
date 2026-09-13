@@ -4,7 +4,7 @@ import sys
 from app.code_agent.utils.mcp import create_mcp_stdio_client
 
 
-async def get_rag_tools():
+async def self_get_rag_tools():
     # 与 tools/powershell_tools.py 同理：
     # - 用 sys.executable，避免 PATH 上的 python 不是当前虚拟环境
     # - 显式传完整环境，否则 mcp 默认过滤掉 PATHEXT，Windows 下命令全部解析不了
@@ -12,7 +12,8 @@ async def get_rag_tools():
     params = {
         'command': sys.executable,
         'args': [
-            r"D:\sd14\ai-agent\app\code_agent\rag\self_rag.py"
+            r'E:\Ai_Agent\app\code_agent\rag\self_rag.py'
+            # r"D:\sd14\ai-agent\app\code_agent\rag\self_rag.py"
         ],
         'env': dict(os.environ),
     }

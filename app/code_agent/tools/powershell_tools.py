@@ -22,7 +22,8 @@ async def get_stdio_powershell_tools():
     params = {
         'command': sys.executable,
         'args': [
-            r"D:\sd14\ai-agent\app\code_agent\mcp\powershell_tools.py"
+            r"E:\Ai_Agent\app\code_agent\mcp\powershell_tools.py"
+            # r"D:\sd14\ai-agent\app\code_agent\mcp\powershell_tools.py"
         ],
         'env': dict(os.environ),
     }

@@ -30,3 +30,4 @@ def run_shell(
 
 if __name__ == '__main__':
     mcp.run(transport='stdio')
+    # print(run_shell('dir'))
