@@ -1,3 +1,6 @@
+import re
+
+from bs4 import BeautifulSoup,Comment
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
@@ -16,11 +19,12 @@ mcp = FastMCP()
 def create_driver():
     """创建带基本反检测配置的 Chrome 驱动"""
     options = Options()
+    options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
 
     # 核心：关闭自动化特征 + 移除自动化提示
-    options.add_argument("--disable-blink-features=AutomationControlled")
-    options.add_experimental_option("excludeSwitches", ["enable-automation"])
-    options.add_experimental_option("useAutomationExtension", False)
+    # options.add_argument("--disable-blink-features=AutomationControlled")
+    # options.add_experimental_option("excludeSwitches", ["enable-automation"])
+    # options.add_experimental_option("useAutomationExtension", False)
 
     driver = webdriver.Chrome(service=service,options=options)
 
@@ -30,7 +34,23 @@ def create_driver():
         {"source": "Object.defineProperty(navigator, 'webdriver', {get: () => undefined});"},
     )
 
+
+
     return driver
+
+def open_chrome():
+    driver = create_driver()
+    driver.get("https://www.baidu.com")
+
+    driver.execute_script('window.open("http://www.sogou.com","_blank");')
+
+    # 获取所有句柄
+    all_handles = driver.window_handles
+    print(all_handles)
+
+    # 切换句柄
+    driver.switch_to.window(all_handles[0])
+
 
 def scroll_to_bottom(driver, max_scrolls=10, pause=0.5):
     """滚动到底部，触发懒加载，直到页面高度不再变化"""
@@ -60,7 +80,7 @@ def scroll_to_bottom(driver, max_scrolls=10, pause=0.5):
     time.sleep(0.3)
 
 
-@mcp.tool(name='search query word in Baidu')
+# @mcp.tool(name='search query word in Baidu')
 def search_in_baidu(query: str) -> str:
     driver = create_driver()
 
@@ -126,8 +146,103 @@ def search_in_baidu(query: str) -> str:
     finally:
         driver.quit()
 
+def pretty_html(html:str) -> str:
+    # 移除指定标签
+    soup=BeautifulSoup(html,"html.parser")
+    for tag in soup(['script','style','link','meta','symbol','path','canvas','svg']):
+        tag.extract()
+
+    # 移除所有display:none的标签
+    display_none_re=re.compile(r"display\s*:\s*none",re.IGNORECASE)
+    for tag in soup.find_all(True):
+        style=tag.get('style','')
+        if display_none_re.search(style):
+            tag.extract()
+
+    # 移除所有代码注释
+    for comment in soup.find_all(string=lambda text: isinstance(text, Comment)):
+        comment.extract()
+
+    html=soup.prettify()
+    return html
+
+@mcp.tool(name='search query word in Baidu')
+def search_in_baidu_with_html(query: str) -> str:
+    driver = create_driver()
+
+    try:
+        driver.get("https://www.baidu.com")
+
+        # 输入框：兼容 AI 版(chat-textarea) 和 普通版(kw)
+        text_box = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located(
+                (By.XPATH, "//*[@id='chat-textarea' or @id='kw']")
+            )
+        )
+        text_box.send_keys(query)
+        time.sleep(random.uniform(0.5, 1))
+
+        # 搜索按钮：兼容 AI 版(chat-submit-button/ci-submit-button) 和 普通版(su)
+        # 找不到就按回车
+        try:
+            submit_button = WebDriverWait(driver, 5).until(
+                EC.element_to_be_clickable(
+                    (By.XPATH,
+                     "//*[@id='chat-submit-button' or @id='ci-submit-button' or @id='su']")
+                )
+            )
+            submit_button.click()
+        except Exception:
+            from selenium.webdriver.common.keys import Keys
+            text_box.send_keys(Keys.ENTER)
+
+        # 等待结果
+        WebDriverWait(driver, 20).until(EC.title_contains(query[:10]))
+
+        # 翻页优化
+        page_text_list = []
+        for i in range(1):
+            if i > 0:
+                print("当前页数：", i + 1)
+                old_url = driver.current_url
+
+                next_btn = WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located(
+                        (By.CSS_SELECTOR, ".page-inner_2jZi2 > a.next_d-g2R")
+                    )
+                )
+                driver.execute_script("arguments[0].click();", next_btn)
+
+                WebDriverWait(driver, 10).until(lambda d: d.current_url != old_url)
+                time.sleep(random.uniform(1, 2))
+
+            # 滚动加载全部内容
+            scroll_to_bottom(driver, max_scrolls=10)
+
+            # 滚动完重新获取 body，避免 stale
+            WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.TAG_NAME, "body"))
+            )
+
+            page_content =driver.find_element(By.TAG_NAME, "body")
+            page_text=page_content.get_attribute("innerHTML")
+            page_text_list.append(page_text)
+        html='\n'.join(page_text_list)
+        return pretty_html(html)
+
+    except Exception as e:
+        print(f"出错: {e}")
+        return ""
+    finally:
+        driver.quit()
+
 
 if __name__ == "__main__":
-    mcp.run(transport='stdio')
-    # result=search_in_baidu("江门的天气")
-    # print(result)
+    # mcp.run(transport='stdio')
+    result=search_in_baidu_with_html("江门的天气")
+    print(result)
+
+
+"""
+控制我们已经登录过某些网站的浏览器，就是保持登录态
+Start-Process "C:\Program Files\Google\Chrome\Application\chrome.exe" -ArgumentList '--remote-debugging-port=9222','--user-data-dir="D:\selenium_profile"'"""
