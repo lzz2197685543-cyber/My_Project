@@ -53,23 +53,23 @@ def print_tool_result(name, content, duration):
 
 
 async def run_agent():
-    memory = CheckpointSaver(base_dir='E:\\Ai_Agent\\temp\\checkpoint')  # D:\\sd14\\ai-agent\\temp\\checkpoint
-    # shell_tools = await get_stdio_shell_tools()
+    memory = CheckpointSaver()
+    shell_tools = await get_stdio_shell_tools()
     powershell_tools = await get_stdio_powershell_tools()
 
     # 方案二：提供一个RAG工具，让智能体通过工具查询知识
     rag_self_tools = await self_get_rag_tools()
 
     browser_tools=await get_stdio_browser_tools()
-    tools = file_tools + powershell_tools+ rag_self_tools+ browser_tools
+    # tools = file_tools + powershell_tools+ rag_self_tools+ browser_tools
+    tools=shell_tools
 
     prompt = PromptTemplate.from_template(template="""
     # 角色
-    你是一名优秀的工程师，你的名字叫做{name}
+    你是一名优秀的工程师，叫{name}
     
     # 要求
-    执行任务之前先使用 query_rag 工具查询知识库，根据知识库中的知识执行任务
-    
+    解决问题时先读取知识库的内容
 
     """)
 

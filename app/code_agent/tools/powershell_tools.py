@@ -2,7 +2,9 @@ import os
 import sys
 
 from app.code_agent.utils.mcp import create_mcp_stdio_client
+from pathlib import Path
 
+Base_dir=Path(__file__).resolve().parent.parent / 'mcp'
 
 async def get_stdio_powershell_tools():
     # 1) 用 sys.executable 而不是字符串 'python'：
@@ -22,8 +24,7 @@ async def get_stdio_powershell_tools():
     params = {
         'command': sys.executable,
         'args': [
-            r"E:\Ai_Agent\app\code_agent\mcp\powershell_tools.py"
-            # r"D:\sd14\ai-agent\app\code_agent\mcp\powershell_tools.py"
+            f"{Base_dir}\powershell_tools.py"
         ],
         'env': dict(os.environ),
     }

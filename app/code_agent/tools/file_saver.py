@@ -19,9 +19,10 @@ put_writes   # 保存AI响应
 put          # 更新最终状态（包含完整对话）
 """
 
+Base_dir=Path(__file__).resolve().parent.parent.parent.parent / 'temp' / 'checkpoint'
 
 class CheckpointSaver(BaseCheckpointSaver[str]):
-    def __init__(self, base_dir: str = 'E:\\Ai_Agent\\temp\\checkpoint'):
+    def __init__(self, base_dir: str = Base_dir):
         super().__init__()
         self.base_dir = base_dir
 
@@ -171,22 +172,22 @@ class CheckpointSaver(BaseCheckpointSaver[str]):
         return self.put_writes(config, writes, task_id, task_path)
 
 
-if __name__ == '__main__':
-    memory = CheckpointSaver(base_dir='D:\\sd14\\ai-agent\\temp')
-
-    agent = create_react_agent(
-        model=qwen_llm,
-        tools=file_tools,
-        checkpointer=memory,
-        debug=False,
-    )
-    config=RunnableConfig(configurable={'thread_id':2})
-    while True:
-        user_input=input('用户:')
-
-        if user_input=='q':
-            break
-
-        res = agent.invoke({'messages': user_input}, config=config)
-        print("助理：",res['message'][-1]['content'])
-
+# if __name__ == '__main__':
+#     memory = CheckpointSaver(base_dir='D:\\sd14\\ai-agent\\temp')
+#
+#     agent = create_react_agent(
+#         model=qwen_llm,
+#         tools=file_tools,
+#         checkpointer=memory,
+#         debug=False,
+#     )
+#     config=RunnableConfig(configurable={'thread_id':2})
+#     while True:
+#         user_input=input('用户:')
+#
+#         if user_input=='q':
+#             break
+#
+#         res = agent.invoke({'messages': user_input}, config=config)
+#         print("助理：",res['message'][-1]['content'])
+#

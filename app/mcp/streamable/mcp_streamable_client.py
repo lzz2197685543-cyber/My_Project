@@ -78,42 +78,6 @@ async def create_mcp_streamable_client():
         return False
 
 
-# ============ 高级用法：上下文管理 ============
-async def advanced_usage():
-    """
-    展示如何优雅地管理客户端生命周期
-    """
-    async with MultiServerMCPClient(
-            {
-                "math": {
-                    "url": "http://127.0.0.1:8000/mcp",
-                    "transport": "streamable_http",
-                }
-            }
-    ) as client:
-        tools = await client.get_tools()
-        print(f"✅ 加载了 {len(tools)} 个工具")
-
-        # 创建 Agent
-        agent = initialize_agent(
-            tools=tools,
-            llm=llm,
-            agent=AgentType.STRUCTURED_CHAT_ZERO_SHOT_REACT_DESCRIPTION,
-            verbose=True,
-        )
-
-        # 多轮对话
-        queries = [
-            "计算 3 + 4 * 5",
-            "计算 10!",
-            "生成前 5 个斐波那契数列",
-        ]
-
-        for query in queries:
-            print(f"\n💬 用户: {query}")
-            resp = await agent.ainvoke(query)
-            print(f"🤖 AI: {resp['output']}")
-
 
 # ============ 入口 ============
 if __name__ == '__main__':
@@ -124,6 +88,3 @@ if __name__ == '__main__':
 
     # 基础用法
     asyncio.run(create_mcp_streamable_client())
-
-    # 高级用法（取消注释使用）
-    # asyncio.run(advanced_usage())

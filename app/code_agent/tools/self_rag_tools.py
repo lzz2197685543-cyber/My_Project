@@ -2,7 +2,9 @@ import os
 import sys
 
 from app.code_agent.utils.mcp import create_mcp_stdio_client
+from pathlib import Path
 
+Base_dir=Path(__file__).resolve().parent.parent / 'rag'
 
 async def self_get_rag_tools():
     # 与 tools/powershell_tools.py 同理：
@@ -12,8 +14,7 @@ async def self_get_rag_tools():
     params = {
         'command': sys.executable,
         'args': [
-            r'E:\Ai_Agent\app\code_agent\rag\self_rag.py'
-            # r"D:\sd14\ai-agent\app\code_agent\rag\self_rag.py"
+            f"{Base_dir}\self_rag.py"
         ],
         'env': dict(os.environ),
     }

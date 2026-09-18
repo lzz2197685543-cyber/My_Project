@@ -13,13 +13,15 @@ from mcp.server.fastmcp import FastMCP
 import time
 import random
 
-service = Service('D:/app/chromedriver-win64/chromedriver.exe')
+# service = Service('D:/app/chromedriver-win64/chromedriver.exe')
+
+service = Service('D:/开发软件/chromedriver-win64/chromedriver.exe')
 
 mcp = FastMCP()
 def create_driver():
     """创建带基本反检测配置的 Chrome 驱动"""
     options = Options()
-    options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
+    # options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
 
     # 核心：关闭自动化特征 + 移除自动化提示
     # options.add_argument("--disable-blink-features=AutomationControlled")
@@ -147,6 +149,7 @@ def search_in_baidu(query: str) -> str:
         driver.quit()
 
 def pretty_html(html:str) -> str:
+    print('没有优化：',len(html))
     # 移除指定标签
     soup=BeautifulSoup(html,"html.parser")
     for tag in soup(['script','style','link','meta','symbol','path','canvas','svg']):
@@ -163,7 +166,19 @@ def pretty_html(html:str) -> str:
     for comment in soup.find_all(string=lambda text: isinstance(text, Comment)):
         comment.extract()
 
+    # 移除无用属性
+    for tag in soup.find_all(True):
+        if tag.name=='a':
+            if 'href' in tag.attrs:
+                if 'javascript:' in tag.attrs['href'] or '/'==tag.attrs['href']:
+                    tag.extract()
+                else:
+                    tag.attrs={'href':tag.attrs['href']}
+        else:
+                tag.attrs={}
+
     html=soup.prettify()
+    print("优化后：", len(html))
     return html
 
 @mcp.tool(name='search query word in Baidu')
@@ -238,9 +253,9 @@ def search_in_baidu_with_html(query: str) -> str:
 
 
 if __name__ == "__main__":
-    # mcp.run(transport='stdio')
-    result=search_in_baidu_with_html("江门的天气")
-    print(result)
+    mcp.run(transport='stdio')
+    # result=search_in_baidu_with_html("江门的天气")
+    # print(result)
 
 
 """

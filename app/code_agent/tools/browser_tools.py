@@ -2,7 +2,9 @@ import os
 import sys
 
 from app.code_agent.utils.mcp import create_mcp_stdio_client
+from pathlib import Path
 
+Base_dir=Path(__file__).resolve().parent.parent / 'mcp'
 
 async def get_stdio_browser_tools():
     # 与 tools/powershell_tools.py 同理：
@@ -11,8 +13,7 @@ async def get_stdio_browser_tools():
     params = {
         'command': sys.executable,
         'args': [
-            r'E:\Ai_Agent\app\code_agent\mcp\browser.py'
-            # r"D:\sd14\ai-agent\app\code_agent\mcp\browser.py"
+            f"{Base_dir}\\browser.py"
         ],
         'env': dict(os.environ),
     }
@@ -20,3 +21,4 @@ async def get_stdio_browser_tools():
     client, tools = await create_mcp_stdio_client('shell_tools', params)
 
     return tools
+

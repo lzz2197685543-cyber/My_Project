@@ -1,5 +1,5 @@
 from langchain_community.agent_toolkits.file_management import FileManagementToolkit
+from pathlib import Path
 
-file_tools = FileManagementToolkit(root_dir='E:\\Ai_Agent\\temp').get_tools()
-
-# file_tools = FileManagementToolkit(root_dir='D:\\sd14\\ai-agent\\temp').get_tools()
+Base_dir=Path(__file__).resolve().parent.parent.parent.parent
+file_tools = FileManagementToolkit(root_dir=f'{Base_dir}\\temp').get_tools()
