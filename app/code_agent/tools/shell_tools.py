@@ -14,7 +14,7 @@ async def get_stdio_shell_tools():
         'command': sys.executable,
         'args': [
 
-            f"{Base_dir}\shell_tools.py"
+            f"{Base_dir}/shell_tools.py"
         ],
         'env': dict(os.environ),
     }

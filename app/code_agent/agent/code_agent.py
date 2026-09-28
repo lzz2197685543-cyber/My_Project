@@ -7,10 +7,13 @@ from app.code_agent.model.qwen import qwen_llm
 from app.code_agent.rag.self_rag import  query_rag_from_bailian
 from app.code_agent.tools.file_tools import file_tools
 from app.code_agent.tools.file_saver import CheckpointSaver
+
 from app.code_agent.tools.shell_tools import get_stdio_shell_tools
 from app.code_agent.tools.self_rag_tools import  self_get_rag_tools
 from app.code_agent.tools.browser_tools import get_stdio_browser_tools
 from app.code_agent.tools.powershell_tools import get_stdio_powershell_tools
+from app.code_agent.tools.mysql_tools import get_stdio_mysql_tools
+from app.code_agent.tools.vm_tools import get_vm_tools
 import asyncio
 from colorama import init, Fore, Style
 
@@ -58,19 +61,18 @@ async def run_agent():
     powershell_tools = await get_stdio_powershell_tools()
 
     # 方案二：提供一个RAG工具，让智能体通过工具查询知识
-    rag_self_tools = await self_get_rag_tools()
+    # rag_self_tools = await self_get_rag_tools()
+    # browser_tools=await get_stdio_browser_tools()
+    # vm_tools = await get_vm_tools()
+    mysql_tools = await get_stdio_mysql_tools()
 
-    browser_tools=await get_stdio_browser_tools()
-    # tools = file_tools + powershell_tools+ rag_self_tools+ browser_tools
-    tools=shell_tools
+    # tools = file_tools + powershell_tools+ rag_self_tools+ browser_tools+ vm_tools
+    tools=mysql_tools
 
     prompt = PromptTemplate.from_template(template="""
     # 角色
     你是一名优秀的工程师，叫{name}
     
-    # 要求
-    解决问题时先读取知识库的内容
-
     """)
 
     # 🔍 添加调试：打印所有工具名称
@@ -87,7 +89,7 @@ async def run_agent():
         debug=False,
         prompt=SystemMessage(content=prompt.format(name='柠檬robot')),
     )
-    config = RunnableConfig(configurable={'thread_id': 1},recursion_limit=100)
+    config = RunnableConfig(configurable={'thread_id': 2},recursion_limit=100)
 
     while True:
         user_input = input(f"\n{C['ai']}你: ")

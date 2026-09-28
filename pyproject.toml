@@ -24,12 +24,15 @@ dependencies = [
     "pyautogui>=0.9.54",
     "alibabacloud-bailian20231229==1.8.2",
     "dashscope>=1.27.4",
-    "pywin32>=312",
+    "pywin32>=312; sys_platform == 'win32'",
     "pexpect>=4.9.0",
     "selenium>=4.49.0",
     "undetected-chromedriver>=3.5.5",
     "setuptools>=84.0.0",
     "bs4>=0.0.2",
+    "colorama>=0.4.6",
+    "pymysql>=1.2.3",
+    "langgraph-supervisor>=0.0.28",
 ]
 [[tool.uv.index]]
 url = "https://mirrors.aliyun.com/pypi/simple/"

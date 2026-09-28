@@ -6,7 +6,7 @@ from pathlib import Path
 
 Base_dir=Path(__file__).resolve().parent.parent / 'mcp'
 
-async def get_stdio_powershell_tools():
+async def get_stdio_mysql_tools():
     # 1) 用 sys.executable 而不是字符串 'python'：
     #    用 'python' 时 MCP 服务走的是 PATH 上的解释器，一旦它不是当前虚拟环境，
     #    服务进程会因为 import mcp/pyautogui/psutil 失败直接退出，客户端就会一直等。
@@ -24,12 +24,11 @@ async def get_stdio_powershell_tools():
     params = {
         'command': sys.executable,
         'args': [
-            # f"{Base_dir}/powershell_tools.py"
-            f"{Base_dir}/powershell_tools_linux.py"
+            f"{Base_dir}/mysql_tools.py"
         ],
         'env': dict(os.environ),
     }
 
-    client, tools = await create_mcp_stdio_client('powershell_tools', params)
+    client, tools = await create_mcp_stdio_client('mysql_tools', params)
 
     return tools

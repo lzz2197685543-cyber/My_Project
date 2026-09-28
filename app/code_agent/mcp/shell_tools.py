@@ -9,13 +9,15 @@ mcp = FastMCP()
 def run_shell(
     command: Annotated[str, Field(description='要执行的命令', examples=['dir', 'ls -la'])]
 ) -> Dict[str, Any]:
+    print(f"[MCP] 执行命令: {command!r}", flush=True)  # 加这行
     try:
         result = subprocess.run(
             command,
             capture_output=True,
             text=True,
             shell=True,
-            timeout=30
+            timeout=30,
+            stdin=subprocess.DEVNULL,  # 关键：禁止交互式输入
         )
         return {
             "success": result.returncode == 0,

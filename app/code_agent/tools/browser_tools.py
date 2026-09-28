@@ -13,12 +13,12 @@ async def get_stdio_browser_tools():
     params = {
         'command': sys.executable,
         'args': [
-            f"{Base_dir}\\browser.py"
+            f"{Base_dir}/browser.py"
         ],
         'env': dict(os.environ),
     }
 
-    client, tools = await create_mcp_stdio_client('shell_tools', params)
+    client, tools = await create_mcp_stdio_client('browser_tools', params)
 
     return tools
 

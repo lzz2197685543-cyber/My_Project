@@ -14,7 +14,7 @@ async def self_get_rag_tools():
     params = {
         'command': sys.executable,
         'args': [
-            f"{Base_dir}\self_rag.py"
+            f"{Base_dir}/self_rag.py"
         ],
         'env': dict(os.environ),
     }
