@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.build-env/
+.test-install/
+.pytest_cache/
+build/
+dist/
+logs/
+data/
+.env
+config/.env
+config/config.json
+.idea/

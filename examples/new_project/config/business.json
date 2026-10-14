@@ -1,0 +1,8 @@
+{
+  "project": "new_shop_project",
+  "batch_size": 100,
+  "products": [
+    {"sku": "DEMO-001", "title": "  儿童   积木玩具  "},
+    {"sku": "DEMO-002", "title": "  木制 拼图  "}
+  ]
+}
