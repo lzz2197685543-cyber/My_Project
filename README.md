@@ -36,6 +36,23 @@
 | `dingtalk_work` | 钉钉工作通知、手机号查询 userId/operatorId | `[dingtalk]` |
 | `browser` | 异步 Playwright、按平台/账号隔离 profile、人工登录等待、资源关闭 | `[browser]` |
 
+## 各模块速查
+| **你想做的事** | **用哪个模块** | **装什么 extra** |
+|---|---|---|
+| 读配置（`.env` / JSON / 环境变量） | `ProjectPaths` / `Settings` / `load_json` | `[config]` |
+| 一次运行一个日志文件、脱敏 | `RunContext` | 无 |
+| 任务去重 + 断点续跑（最简单） | `run_tasks(items, handler, db_path=..., key=...)` | 无 |
+| 精细控制租约 / 人工恢复 | `SQLiteTaskStore` + `TaskRunner` | 无 |
+| 安全 HTTP（重试 / 鉴权 / 幂等） | `HttpClient` / `AsyncHttpClient` | `[http]` |
+| AI 改标题 / 总结 | `ask_ai` / `AIClient` | `[ai]` |
+| 钉钉群机器人消息 | `DingTalkNotifier` | `[notify]` |
+| 钉钉多维表上传 / 查询 / 删除 | `upload_dingtalk_records` 等 | `[dingtalk]` |
+| 钉钉工作通知 + 手机号查 ID | `dingtalk_work` | `[dingtalk]` |
+| 持久化浏览器登录态 | `BrowserSession` | `[browser]` |
+| MySQL 事务 | `MySQLPool` + `BaseDAO` | `[mysql]` |
+| Redis 完成标记去重 | `RedisDeduplicator` | `[redis]` |
+
+
 只需要哪个模块就安装哪个模块：
 
 ```powershell

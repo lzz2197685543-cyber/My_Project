@@ -1,20 +1,22 @@
 # 一、AI 对话
-# from ecommerce_automation.ai import ask_ai, AIClient
-#
-#
+from ecommerce_automation.ai import ask_ai, AIClient
+
+
 # title = ask_ai(
 #     "把这个商品标题改写成英文：儿童积木",
-#     api_key="sk-00000",# 填写正确的api_key
-#     base_url='https://codex666ai.com/v1',
-#     model="deepseek-v4.1-flash",
+#     api_key="sk-yBH8H76kpp8NojoChfH9hnab5QLAX5qq",# 填写正确的api_key
+#     base_url='https://token.sensenova.cn/v1/chat/completions',
+#     model="sensenova-6.8-flash-lite",
 #     system_prompt="只返回改写后的标题",
 #     temperature=0.2,
 # )
 # print(title)
 
+
 # # 同一程序要多次请求时，复用 AIClient 可避免重复创建连接。
 # with AIClient(api_key=api_key, base_url=ai_base_url, model="your-model") as ai:
 #     another_title = ai.simple_chat("继续改写下一个商品标题")
+
 
 
 # 二、钉钉机器人消息(群聊)
@@ -142,16 +144,26 @@
 
 
 # 五、普通函数式任务队列
-from ecommerce_automation.tasks import run_tasks
 
-def publish_one(product):
-    # 这里仍然是项目自己的普通业务代码
-    return {"sku": product["sku"], "published": True}
-
-summary = run_tasks(
-    products,
-    publish_one,
-    db_path="data/publish_tasks.sqlite3",
-    key="sku",
-    queue="publish_products",
-)
+# from ecommerce_automation.tasks import run_tasks
+#
+# items = [
+#     {"product_id": "1001", "name": "手机壳"},
+#     {"product_id": "1002", "name": "数据线"},
+#     {"product_id": "1004", "name": "充电器"},
+# ]
+#
+# def process_product(item):
+#     print(f"正在处理商品：{item['name']}")
+#     return True
+#
+# result = run_tasks(
+#     items,
+#     process_product,
+#     db_path="tasks.db",
+#     key="product_id",
+#     max_attempts=3,
+#     retry_delay=30,
+# )
+#
+# print(result)

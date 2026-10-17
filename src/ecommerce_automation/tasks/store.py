@@ -31,12 +31,17 @@ class Task:
 
 
 class TaskStore(Protocol):
+    """它规定任务存储类至少应该提供三个方法："""
+
     def claim(self, queue: str, worker_id: str, *, lease_seconds: float = 300) -> Task | None: ...
+
     def finish(self, task: Task, status: TaskStatus, **kwargs) -> TaskStatus: ...
+
     def heartbeat(self, task: Task, *, lease_seconds: float = 300) -> None: ...
 
 
 def _task(row: sqlite3.Row) -> Task:
+    """把数据库记录转换成 Task 对象"""
     return Task(
         id=row["id"], queue=row["queue"], key=row["task_key"],
         payload=json.loads(row["payload"]), status=TaskStatus(row["status"]),
@@ -56,6 +61,7 @@ class SQLiteTaskStore:
 
     @contextmanager
     def _write_transaction(self):
+        """写入事务,要么完整提交，要么出错后回滚"""
         connection = sqlite3.connect(self.path, timeout=30, isolation_level=None)
         connection.row_factory = sqlite3.Row
         try:
@@ -78,20 +84,38 @@ class SQLiteTaskStore:
             connection.close()
 
     def initialize(self) -> None:
+        """
+        任务信息	id、queue、task_key、payload	标识任务及保存输入数据
+        执行控制	status、attempts、max_attempts、available_at	控制任务何时可以执行、可以执行多少次
+        执行权管理	worker_id、lease_token、lease_until	记录由谁领取任务以及租约何时过期
+        执行记录	result、error、business_state、operation_id、remote_id	保存结果、错误和业务关联信息
+        """
         self.path.parent.mkdir(parents=True, exist_ok=True)
         with self._write_transaction() as connection:
             connection.execute("""
                 CREATE TABLE IF NOT EXISTS tasks (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    queue TEXT NOT NULL, task_key TEXT NOT NULL, payload TEXT NOT NULL,
-                    status TEXT NOT NULL DEFAULT 'pending', attempts INTEGER NOT NULL DEFAULT 0,
-                    max_attempts INTEGER NOT NULL, available_at REAL NOT NULL,
-                    worker_id TEXT, lease_token TEXT, lease_until REAL,
-                    result TEXT, error TEXT, business_state TEXT, operation_id TEXT, remote_id TEXT,
-                    created_at REAL NOT NULL, updated_at REAL NOT NULL,
+                    queue TEXT NOT NULL,
+                    task_key TEXT NOT NULL,
+                    payload TEXT NOT NULL,
+                    status TEXT NOT NULL DEFAULT 'pending',
+                    attempts INTEGER NOT NULL DEFAULT 0,
+                    max_attempts INTEGER NOT NULL,
+                    available_at REAL NOT NULL,
+                    worker_id TEXT,
+                    lease_token TEXT,
+                    lease_until REAL,
+                    result TEXT,
+                    error TEXT,
+                    business_state TEXT,
+                    operation_id TEXT,
+                    remote_id TEXT,
+                    created_at REAL NOT NULL,
+                    updated_at REAL NOT NULL,
                     UNIQUE(queue, task_key)
                 )
             """)
+            #这段代码是在做简单的数据库结构升级。如果旧版本的 tasks 表没有这三个字段，就将它们添加进去。这样，程序可以兼容部分较早版本的数据库。
             columns = {row["name"] for row in connection.execute("PRAGMA table_info(tasks)")}
             for name in ("business_state", "operation_id", "remote_id"):
                 if name not in columns:
@@ -99,9 +123,9 @@ class SQLiteTaskStore:
             connection.execute("CREATE INDEX IF NOT EXISTS tasks_ready ON tasks(queue, status, available_at, id)")
 
     def enqueue(
-        self, queue: str, key: str, payload: dict, *, max_attempts: int = 3,
-        business_state: str | None = None, operation_id: str | None = None,
-        remote_id: str | None = None,
+            self, queue: str, key: str, payload: dict, *, max_attempts: int = 3,
+            business_state: str | None = None, operation_id: str | None = None,
+            remote_id: str | None = None,
     ) -> bool:
         if not queue.strip() or not key.strip() or max_attempts < 1:
             raise ValueError("queue/key must be nonempty and max_attempts >= 1")
@@ -115,10 +139,11 @@ class SQLiteTaskStore:
                     business_state, operation_id, remote_id, created_at, updated_at)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT(queue, task_key) DO NOTHING
             """, (queue, key, encoded, max_attempts, now, business_state,
-                   operation_id, remote_id, now, now))
+                  operation_id, remote_id, now, now))
             return cursor.rowcount == 1
 
     def claim(self, queue: str, worker_id: str, *, lease_seconds: float = 300) -> Task | None:
+        """从指定队列中找出一个可以执行的任务，把它分配给某个工作进程"""
         if lease_seconds <= 0 or not worker_id.strip():
             raise ValueError("lease_seconds must be positive and worker_id nonempty")
         now = self.clock()
@@ -153,10 +178,10 @@ class SQLiteTaskStore:
                 raise LeaseLostError(f"Task {task.id} no longer belongs to this worker")
 
     def finish(
-        self, task: Task, status: TaskStatus, *, result: Any = None,
-        error: str | None = None, retry_delay: float = 0,
-        business_state: str | None = None, operation_id: str | None = None,
-        remote_id: str | None = None,
+            self, task: Task, status: TaskStatus, *, result: Any = None,
+            error: str | None = None, retry_delay: float = 0,
+            business_state: str | None = None, operation_id: str | None = None,
+            remote_id: str | None = None,
     ) -> TaskStatus:
         status = TaskStatus(status)
         if status == TaskStatus.PROCESSING or retry_delay < 0:
@@ -178,7 +203,7 @@ class SQLiteTaskStore:
                     remote_id=COALESCE(?, remote_id), lease_token=NULL, lease_until=NULL,
                     updated_at=? WHERE id=?
             """, (status.value, encoded, error, now + retry_delay, business_state,
-                   operation_id, remote_id, now, task.id))
+                  operation_id, remote_id, now, task.id))
         return status
 
     def get(self, queue: str, key: str) -> Task | None:
@@ -189,7 +214,8 @@ class SQLiteTaskStore:
     def counts(self, queue: str) -> dict[str, int]:
         result = {status.value: 0 for status in TaskStatus}
         with self._read_connection() as connection:
-            for row in connection.execute("SELECT status, COUNT(*) AS count FROM tasks WHERE queue=? GROUP BY status", (queue,)):
+            for row in connection.execute("SELECT status, COUNT(*) AS count FROM tasks WHERE queue=? GROUP BY status",
+                                          (queue,)):
                 result[row["status"]] = row["count"]
         return result
 
@@ -210,9 +236,9 @@ class SQLiteTaskStore:
             """, (attempts, now, now, task_id))
 
     def resolve_manual(
-        self, task_id: int, status: TaskStatus, *, result: Any = None,
-        error: str | None = None, business_state: str | None = None,
-        operation_id: str | None = None, remote_id: str | None = None,
+            self, task_id: int, status: TaskStatus, *, result: Any = None,
+            error: str | None = None, business_state: str | None = None,
+            operation_id: str | None = None, remote_id: str | None = None,
     ) -> TaskStatus:
         """Record an operator's remote reconciliation decision."""
         status = TaskStatus(status)
@@ -227,7 +253,7 @@ class SQLiteTaskStore:
                     lease_token=NULL, lease_until=NULL, updated_at=?
                 WHERE id=? AND status='need_manual'
             """, (status.value, encoded, error, business_state, operation_id,
-                   remote_id, now, task_id)).rowcount
+                  remote_id, now, task_id)).rowcount
             if changed != 1:
                 raise ValueError("Only need_manual tasks can be resolved")
         return status

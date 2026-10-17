@@ -12,6 +12,33 @@ from ..status import TaskStatus
 from ..workflow import TaskOutcome
 from .store import SQLiteTaskStore, Task, TaskStore
 
+# ============================================================
+# TaskRunner.run() 执行流程
+#
+# 1. 从数据库领取任务
+#    task = store.claim(queue, worker_id, lease_seconds=...)
+#    - 从指定队列领取一个可执行任务
+#    - 如果没有可领取的任务，则退出循环
+#
+# 2. 执行业务处理函数
+#    result = handler(task)
+#    - 执行采集、匹配、同步等具体业务逻辑
+#
+# 3. 判断业务执行结果
+#    - 正常返回：
+#        调用 _finish_result() 处理业务结果
+#    - 抛出异常：
+#        调用 _record_error() 根据异常类型分类处理
+#        SkipTask        -> SKIPPED
+#        RetryableError  -> PENDING
+#        PermanentError  -> FAILED
+#        其他异常         -> NEED_MANUAL
+#
+# 4. 更新数据库任务状态
+#    store.finish(...)
+#    - 保存任务状态、执行结果、错误信息
+#
+
 
 @dataclass
 class RunSummary:
